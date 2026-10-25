@@ -1,0 +1,9 @@
+{
+ "months": [
+  "2026-09",
+  "2026-10"
+ ],
+ "customer_months": 72,
+ "max_difference_usd": 0.0,
+ "spark_seconds": 15.5
+}
