@@ -38,7 +38,20 @@ From `acm replay` (all faults on, a pipeline run every 12 hours from 1 September
 
 Each fault alone, on a fresh world (reports/DRILLS.md):
 
-DRILLS_TABLE
+| fault, alone | alert | billed correctly |
+|---|---|---|
+| none (clean world) | nothing pages | to the cent |
+| 1% producer retries and agent spool replays | none, by design (below the 3% threshold) | to the cent |
+| a gateway delivering every file twice | `duplicates` | to the cent |
+| 0.5% of events 1 to 48 h late | none needed (recomputed) | to the cent |
+| regional collector outage, data delivered after the close | `freshness`, then `restatement` | to the cent, via adjustments |
+| 2% of stop events lost | `inferred_session_end` | within $0.20 (rule allows up to $3.67) |
+| host clocks off by up to 5 minutes | `clock_skew` | to the cent |
+| a declared schema change (v2 renames) | none needed (upcast) | to the cent |
+| tokens reported in thousands for 36 h | `token_plausibility`, cleared by the corrected revision | to the cent |
+| an undeclared field rename | `quarantine` and `freshness` | held back ($38.91), not guessed |
+
+The naive pipeline is off by $800 to $1,350 for September in every drill, including the clean one. The outage also opens `heartbeat_coverage` and `inferred_session_end`: while the collector is down, sessions look as if they ended, and are corrected when the data arrives.
 
 ## How it works
 

@@ -21,54 +21,40 @@ A lost stop event cannot be recovered exactly: the session is billed to one hear
 
 | run at (UTC) | files | rows | closed | restated | alerts opened |
 |---|---|---|---|---|---|
-| 2026-09-03 01:00 | 42 | 4,163 |  |  | duplicates:vm_lifecycle |
 | 2026-09-03 13:00 | 41 | 4,193 |  |  | clock_skew:hosts |
 | 2026-09-05 13:00 | 41 | 4,226 |  |  | inferred_session_end:sessions |
-| 2026-09-14 01:00 | 40 | 3,824 |  |  | duplicates:vm_lifecycle, inferred_session_end:sessions |
-| 2026-09-17 13:00 | 39 | 4,045 |  |  | duplicates:vm_lifecycle |
-| 2026-09-22 01:00 | 39 | 4,045 |  |  | duplicates:vm_lifecycle |
+| 2026-09-14 01:00 | 40 | 3,824 |  |  | inferred_session_end:sessions |
 | 2026-09-28 13:00 | 42 | 4,293 |  |  | inferred_session_end:sessions |
 | 2026-10-01 01:00 | 41 | 3,205 |  |  | freshness:inference_usage/eu-north1, freshness:storage_snapshot/eu-north1 |
-| 2026-10-01 13:00 | 43 | 3,400 |  |  | duplicates:vm_lifecycle, heartbeat_coverage:sessions |
-| 2026-10-03 01:00 | 41 | 4,550 |  |  | duplicates:vm_lifecycle, inferred_session_end:sessions |
+| 2026-10-01 13:00 | 43 | 3,400 |  |  | heartbeat_coverage:sessions |
+| 2026-10-03 01:00 | 41 | 4,550 |  |  | inferred_session_end:sessions |
 | 2026-10-03 12:00 | 34 | 4,363 | 2026-09 |  |  |
 | 2026-10-04 12:00 | 39 | 6,109 |  | $74.12 | restatement:2026-09 |
 | 2026-10-06 01:00 | 40 | 4,563 |  |  | token_plausibility:us-central1/qwen-235b/2026-10-06, token_plausibility:us-central1/llama-70b/2026-10-06 |
-| 2026-10-06 13:00 | 43 | 4,425 |  |  | duplicates:vm_lifecycle, inferred_session_end:sessions |
+| 2026-10-06 13:00 | 43 | 4,425 |  |  | inferred_session_end:sessions |
 | 2026-10-07 01:00 | 41 | 4,507 |  |  | token_plausibility:us-central1/llama-70b/2026-10-07, token_plausibility:us-central1/qwen-235b/2026-10-07 |
-| 2026-10-10 01:00 | 41 | 4,934 |  |  | duplicates:vm_lifecycle |
 | 2026-10-13 01:00 | 41 | 4,153 |  |  | inferred_session_end:sessions |
-| 2026-10-16 01:00 | 40 | 3,744 |  |  | duplicates:vm_lifecycle |
 | 2026-10-16 13:00 | 19 | 24 |  |  | freshness:inference_usage/eu-north1, freshness:inference_usage/eu-west1, freshness:inference_usage/us-central1, freshness:storage_snapshot/eu-north1, freshness:storage_snapshot/eu-west1, freshness:storage_snapshot/us-central1 |
 
 ## Alerts
 
 | check | key | opened | resolved | message |
 |---|---|---|---|---|
-| duplicates | vm_lifecycle | 2026-09-03 01:00 | 2026-09-04 01:00 | 4.0% duplicate copies in vm_lifecycle over the last 24 h |
 | clock_skew | hosts | 2026-09-03 13:00 | open | 1 hosts with clocks off by more than 60 s (corrected from the schedule) |
 | inferred_session_end | sessions | 2026-09-05 13:00 | 2026-09-08 13:00 | 1 sessions in the last 72 h ended without a stop event (billed to one heartbeat after the last) |
-| duplicates | vm_lifecycle | 2026-09-14 01:00 | 2026-09-15 01:00 | 6.9% duplicate copies in vm_lifecycle over the last 24 h |
 | inferred_session_end | sessions | 2026-09-14 01:00 | 2026-09-17 01:00 | 1 sessions in the last 72 h ended without a stop event (billed to one heartbeat after the last) |
-| duplicates | vm_lifecycle | 2026-09-17 13:00 | 2026-09-18 13:00 | 9.1% duplicate copies in vm_lifecycle over the last 24 h |
-| duplicates | vm_lifecycle | 2026-09-22 01:00 | 2026-09-23 13:00 | 6.7% duplicate copies in vm_lifecycle over the last 24 h |
 | inferred_session_end | sessions | 2026-09-28 13:00 | 2026-10-01 13:00 | 1 sessions in the last 72 h ended without a stop event (billed to one heartbeat after the last) |
 | freshness | inference_usage/eu-north1 | 2026-10-01 01:00 | 2026-10-01 13:00 | no inference_usage from eu-north1 for 7.2 h |
 | freshness | storage_snapshot/eu-north1 | 2026-10-01 01:00 | 2026-10-01 13:00 | no storage_snapshot from eu-north1 for 8.0 h |
-| duplicates | vm_lifecycle | 2026-10-01 13:00 | 2026-10-02 13:00 | 3.2% duplicate copies in vm_lifecycle over the last 24 h |
 | heartbeat_coverage | sessions | 2026-10-01 13:00 | 2026-10-03 12:00 | 1 sessions with under 80% heartbeat coverage |
-| duplicates | vm_lifecycle | 2026-10-03 01:00 | 2026-10-05 13:00 | 3.7% duplicate copies in vm_lifecycle over the last 24 h |
 | inferred_session_end | sessions | 2026-10-03 01:00 | 2026-10-03 12:00 | 1 sessions in the last 72 h ended without a stop event (billed to one heartbeat after the last) |
 | restatement | 2026-09 | 2026-10-04 12:00 | open | closed month restated by $74.12 gross (events ingested after close: 362 gpu_heartbeat, 266 inference_usage, 208 storage_snapshot) |
 | token_plausibility | us-central1/qwen-235b/2026-10-06 | 2026-10-06 01:00 | 2026-10-08 13:00 | median 1.0 input tokens per request on us-central1 qwen-235b 2026-10-06 |
 | token_plausibility | us-central1/llama-70b/2026-10-06 | 2026-10-06 01:00 | 2026-10-08 13:00 | median 1.0 input tokens per request on us-central1 llama-70b 2026-10-06 |
-| duplicates | vm_lifecycle | 2026-10-06 13:00 | 2026-10-07 13:00 | 3.3% duplicate copies in vm_lifecycle over the last 24 h |
 | inferred_session_end | sessions | 2026-10-06 13:00 | 2026-10-09 13:00 | 1 sessions in the last 72 h ended without a stop event (billed to one heartbeat after the last) |
 | token_plausibility | us-central1/llama-70b/2026-10-07 | 2026-10-07 01:00 | 2026-10-08 01:00 | median 1.5 input tokens per request on us-central1 llama-70b 2026-10-07 |
 | token_plausibility | us-central1/qwen-235b/2026-10-07 | 2026-10-07 01:00 | 2026-10-08 13:00 | median 1.3 input tokens per request on us-central1 qwen-235b 2026-10-07 |
-| duplicates | vm_lifecycle | 2026-10-10 01:00 | 2026-10-11 01:00 | 3.0% duplicate copies in vm_lifecycle over the last 24 h |
 | inferred_session_end | sessions | 2026-10-13 01:00 | open | 1 sessions in the last 72 h ended without a stop event (billed to one heartbeat after the last) |
-| duplicates | vm_lifecycle | 2026-10-16 01:00 | 2026-10-17 01:00 | 4.3% duplicate copies in vm_lifecycle over the last 24 h (simulated producers stopped) |
 | freshness | inference_usage/eu-north1 | 2026-10-16 13:00 | open | no inference_usage from eu-north1 for 13.0 h (simulated producers stopped) |
 | freshness | inference_usage/eu-west1 | 2026-10-16 13:00 | open | no inference_usage from eu-west1 for 13.0 h (simulated producers stopped) |
 | freshness | inference_usage/us-central1 | 2026-10-16 13:00 | open | no inference_usage from us-central1 for 13.0 h (simulated producers stopped) |
@@ -78,4 +64,4 @@ A lost stop event cannot be recovered exactly: the session is billed to one hear
 
 ## Cost of a run
 
-A pipeline run took 1.8 s on average and 4.9 s at most (the whole replay: 195 s, including the simulator and the naive pipeline). Bronze ended with 180 Parquet files after compaction.
+A pipeline run took 1.8 s on average and 5.1 s at most (the whole replay: 197 s, including the simulator and the naive pipeline). Bronze ended with 180 Parquet files after compaction.

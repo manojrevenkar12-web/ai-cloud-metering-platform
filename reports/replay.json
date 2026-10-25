@@ -48,15 +48,6 @@
  },
  "alerts": [
   {
-   "check": "duplicates",
-   "key": "vm_lifecycle",
-   "severity": "warn",
-   "opened_at": "2026-09-03T01:00:00Z",
-   "resolved_at": "2026-09-04T01:00:00Z",
-   "message": "4.0% duplicate copies in vm_lifecycle over the last 24 h",
-   "after_simulation_end": false
-  },
-  {
    "check": "clock_skew",
    "key": "hosts",
    "severity": "warn",
@@ -75,39 +66,12 @@
    "after_simulation_end": false
   },
   {
-   "check": "duplicates",
-   "key": "vm_lifecycle",
-   "severity": "warn",
-   "opened_at": "2026-09-14T01:00:00Z",
-   "resolved_at": "2026-09-15T01:00:00Z",
-   "message": "6.9% duplicate copies in vm_lifecycle over the last 24 h",
-   "after_simulation_end": false
-  },
-  {
    "check": "inferred_session_end",
    "key": "sessions",
    "severity": "warn",
    "opened_at": "2026-09-14T01:00:00Z",
    "resolved_at": "2026-09-17T01:00:00Z",
    "message": "1 sessions in the last 72 h ended without a stop event (billed to one heartbeat after the last)",
-   "after_simulation_end": false
-  },
-  {
-   "check": "duplicates",
-   "key": "vm_lifecycle",
-   "severity": "warn",
-   "opened_at": "2026-09-17T13:00:00Z",
-   "resolved_at": "2026-09-18T13:00:00Z",
-   "message": "9.1% duplicate copies in vm_lifecycle over the last 24 h",
-   "after_simulation_end": false
-  },
-  {
-   "check": "duplicates",
-   "key": "vm_lifecycle",
-   "severity": "warn",
-   "opened_at": "2026-09-22T01:00:00Z",
-   "resolved_at": "2026-09-23T13:00:00Z",
-   "message": "6.7% duplicate copies in vm_lifecycle over the last 24 h",
    "after_simulation_end": false
   },
   {
@@ -138,30 +102,12 @@
    "after_simulation_end": false
   },
   {
-   "check": "duplicates",
-   "key": "vm_lifecycle",
-   "severity": "warn",
-   "opened_at": "2026-10-01T13:00:00Z",
-   "resolved_at": "2026-10-02T13:00:00Z",
-   "message": "3.2% duplicate copies in vm_lifecycle over the last 24 h",
-   "after_simulation_end": false
-  },
-  {
    "check": "heartbeat_coverage",
    "key": "sessions",
    "severity": "warn",
    "opened_at": "2026-10-01T13:00:00Z",
    "resolved_at": "2026-10-03T12:00:00Z",
    "message": "1 sessions with under 80% heartbeat coverage",
-   "after_simulation_end": false
-  },
-  {
-   "check": "duplicates",
-   "key": "vm_lifecycle",
-   "severity": "warn",
-   "opened_at": "2026-10-03T01:00:00Z",
-   "resolved_at": "2026-10-05T13:00:00Z",
-   "message": "3.7% duplicate copies in vm_lifecycle over the last 24 h",
    "after_simulation_end": false
   },
   {
@@ -201,15 +147,6 @@
    "after_simulation_end": false
   },
   {
-   "check": "duplicates",
-   "key": "vm_lifecycle",
-   "severity": "warn",
-   "opened_at": "2026-10-06T13:00:00Z",
-   "resolved_at": "2026-10-07T13:00:00Z",
-   "message": "3.3% duplicate copies in vm_lifecycle over the last 24 h",
-   "after_simulation_end": false
-  },
-  {
    "check": "inferred_session_end",
    "key": "sessions",
    "severity": "warn",
@@ -237,15 +174,6 @@
    "after_simulation_end": false
   },
   {
-   "check": "duplicates",
-   "key": "vm_lifecycle",
-   "severity": "warn",
-   "opened_at": "2026-10-10T01:00:00Z",
-   "resolved_at": "2026-10-11T01:00:00Z",
-   "message": "3.0% duplicate copies in vm_lifecycle over the last 24 h",
-   "after_simulation_end": false
-  },
-  {
    "check": "inferred_session_end",
    "key": "sessions",
    "severity": "warn",
@@ -253,15 +181,6 @@
    "resolved_at": null,
    "message": "1 sessions in the last 72 h ended without a stop event (billed to one heartbeat after the last)",
    "after_simulation_end": false
-  },
-  {
-   "check": "duplicates",
-   "key": "vm_lifecycle",
-   "severity": "warn",
-   "opened_at": "2026-10-16T01:00:00Z",
-   "resolved_at": "2026-10-17T01:00:00Z",
-   "message": "4.3% duplicate copies in vm_lifecycle over the last 24 h",
-   "after_simulation_end": true
   },
   {
    "check": "freshness",
@@ -330,7 +249,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 0.44
+   "seconds": 0.41
   },
   {
    "at": "2026-09-01T13:00:00Z",
@@ -343,7 +262,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 0.64
+   "seconds": 0.78
   },
   {
    "at": "2026-09-02T01:00:00Z",
@@ -356,7 +275,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 0.67
+   "seconds": 0.83
   },
   {
    "at": "2026-09-02T13:00:00Z",
@@ -369,7 +288,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 0.83
+   "seconds": 0.9
   },
   {
    "at": "2026-09-03T01:00:00Z",
@@ -381,10 +300,8 @@
    ],
    "closed": [],
    "restated_usd": 0,
-   "alerts_opened": [
-    "duplicates:vm_lifecycle"
-   ],
-   "seconds": 0.94
+   "alerts_opened": [],
+   "seconds": 0.99
   },
   {
    "at": "2026-09-03T13:00:00Z",
@@ -399,7 +316,7 @@
    "alerts_opened": [
     "clock_skew:hosts"
    ],
-   "seconds": 1.15
+   "seconds": 0.98
   },
   {
    "at": "2026-09-04T01:00:00Z",
@@ -412,7 +329,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 0.99
+   "seconds": 1.17
   },
   {
    "at": "2026-09-04T13:00:00Z",
@@ -425,7 +342,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.13
+   "seconds": 1.28
   },
   {
    "at": "2026-09-05T01:00:00Z",
@@ -438,7 +355,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.0
+   "seconds": 0.94
   },
   {
    "at": "2026-09-05T13:00:00Z",
@@ -453,7 +370,7 @@
    "alerts_opened": [
     "inferred_session_end:sessions"
    ],
-   "seconds": 1.19
+   "seconds": 1.34
   },
   {
    "at": "2026-09-06T01:00:00Z",
@@ -466,7 +383,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.07
+   "seconds": 1.27
   },
   {
    "at": "2026-09-06T13:00:00Z",
@@ -479,7 +396,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.22
+   "seconds": 1.39
   },
   {
    "at": "2026-09-07T01:00:00Z",
@@ -492,7 +409,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.16
+   "seconds": 1.12
   },
   {
    "at": "2026-09-07T13:00:00Z",
@@ -505,7 +422,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.36
+   "seconds": 1.32
   },
   {
    "at": "2026-09-08T01:00:00Z",
@@ -518,7 +435,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.08
+   "seconds": 1.19
   },
   {
    "at": "2026-09-08T13:00:00Z",
@@ -531,7 +448,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.31
+   "seconds": 1.53
   },
   {
    "at": "2026-09-09T01:00:00Z",
@@ -544,7 +461,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.23
+   "seconds": 1.5
   },
   {
    "at": "2026-09-09T13:00:00Z",
@@ -557,7 +474,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.3
+   "seconds": 1.49
   },
   {
    "at": "2026-09-10T01:00:00Z",
@@ -570,7 +487,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.26
+   "seconds": 1.35
   },
   {
    "at": "2026-09-10T13:00:00Z",
@@ -583,7 +500,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.39
+   "seconds": 1.49
   },
   {
    "at": "2026-09-11T01:00:00Z",
@@ -596,7 +513,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.2
+   "seconds": 1.42
   },
   {
    "at": "2026-09-11T13:00:00Z",
@@ -609,7 +526,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.37
+   "seconds": 1.67
   },
   {
    "at": "2026-09-12T01:00:00Z",
@@ -622,7 +539,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.34
+   "seconds": 1.21
   },
   {
    "at": "2026-09-12T13:00:00Z",
@@ -635,7 +552,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.46
+   "seconds": 1.65
   },
   {
    "at": "2026-09-13T01:00:00Z",
@@ -648,7 +565,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.3
+   "seconds": 1.29
   },
   {
    "at": "2026-09-13T13:00:00Z",
@@ -661,7 +578,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.43
+   "seconds": 1.5
   },
   {
    "at": "2026-09-14T01:00:00Z",
@@ -674,10 +591,9 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [
-    "duplicates:vm_lifecycle",
     "inferred_session_end:sessions"
    ],
-   "seconds": 1.44
+   "seconds": 1.38
   },
   {
    "at": "2026-09-14T13:00:00Z",
@@ -690,7 +606,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.39
+   "seconds": 1.73
   },
   {
    "at": "2026-09-15T01:00:00Z",
@@ -703,7 +619,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.33
+   "seconds": 1.62
   },
   {
    "at": "2026-09-15T13:00:00Z",
@@ -716,7 +632,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.48
+   "seconds": 1.52
   },
   {
    "at": "2026-09-16T01:00:00Z",
@@ -729,7 +645,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.47
+   "seconds": 1.65
   },
   {
    "at": "2026-09-16T13:00:00Z",
@@ -742,7 +658,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.51
+   "seconds": 1.78
   },
   {
    "at": "2026-09-17T01:00:00Z",
@@ -755,7 +671,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.44
+   "seconds": 1.59
   },
   {
    "at": "2026-09-17T13:00:00Z",
@@ -767,10 +683,8 @@
    ],
    "closed": [],
    "restated_usd": 0,
-   "alerts_opened": [
-    "duplicates:vm_lifecycle"
-   ],
-   "seconds": 1.66
+   "alerts_opened": [],
+   "seconds": 1.77
   },
   {
    "at": "2026-09-18T01:00:00Z",
@@ -783,7 +697,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.41
+   "seconds": 2.06
   },
   {
    "at": "2026-09-18T13:00:00Z",
@@ -796,7 +710,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.6
+   "seconds": 2.49
   },
   {
    "at": "2026-09-19T01:00:00Z",
@@ -809,7 +723,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.51
+   "seconds": 1.46
   },
   {
    "at": "2026-09-19T13:00:00Z",
@@ -822,7 +736,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.75
+   "seconds": 1.68
   },
   {
    "at": "2026-09-20T01:00:00Z",
@@ -835,7 +749,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.7
+   "seconds": 1.55
   },
   {
    "at": "2026-09-20T13:00:00Z",
@@ -848,7 +762,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.64
+   "seconds": 1.62
   },
   {
    "at": "2026-09-21T01:00:00Z",
@@ -861,7 +775,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.41
+   "seconds": 1.55
   },
   {
    "at": "2026-09-21T13:00:00Z",
@@ -874,7 +788,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.63
+   "seconds": 1.78
   },
   {
    "at": "2026-09-22T01:00:00Z",
@@ -886,10 +800,8 @@
    ],
    "closed": [],
    "restated_usd": 0,
-   "alerts_opened": [
-    "duplicates:vm_lifecycle"
-   ],
-   "seconds": 1.55
+   "alerts_opened": [],
+   "seconds": 1.57
   },
   {
    "at": "2026-09-22T13:00:00Z",
@@ -902,7 +814,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.71
+   "seconds": 1.73
   },
   {
    "at": "2026-09-23T01:00:00Z",
@@ -915,7 +827,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.45
+   "seconds": 1.44
   },
   {
    "at": "2026-09-23T13:00:00Z",
@@ -928,7 +840,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.59
+   "seconds": 1.76
   },
   {
    "at": "2026-09-24T01:00:00Z",
@@ -941,7 +853,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.47
+   "seconds": 1.53
   },
   {
    "at": "2026-09-24T13:00:00Z",
@@ -954,7 +866,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.77
+   "seconds": 2.05
   },
   {
    "at": "2026-09-25T01:00:00Z",
@@ -967,7 +879,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.64
+   "seconds": 1.5
   },
   {
    "at": "2026-09-25T13:00:00Z",
@@ -980,7 +892,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.76
+   "seconds": 1.91
   },
   {
    "at": "2026-09-26T01:00:00Z",
@@ -993,7 +905,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.65
+   "seconds": 1.61
   },
   {
    "at": "2026-09-26T13:00:00Z",
@@ -1006,7 +918,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.94
+   "seconds": 2.07
   },
   {
    "at": "2026-09-27T01:00:00Z",
@@ -1019,7 +931,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.6
+   "seconds": 1.78
   },
   {
    "at": "2026-09-27T13:00:00Z",
@@ -1032,7 +944,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.82
+   "seconds": 2.07
   },
   {
    "at": "2026-09-28T01:00:00Z",
@@ -1045,7 +957,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.69
+   "seconds": 1.76
   },
   {
    "at": "2026-09-28T13:00:00Z",
@@ -1060,7 +972,7 @@
    "alerts_opened": [
     "inferred_session_end:sessions"
    ],
-   "seconds": 1.92
+   "seconds": 2.16
   },
   {
    "at": "2026-09-29T01:00:00Z",
@@ -1073,7 +985,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.85
+   "seconds": 1.69
   },
   {
    "at": "2026-09-29T13:00:00Z",
@@ -1086,7 +998,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.0
+   "seconds": 1.98
   },
   {
    "at": "2026-09-30T01:00:00Z",
@@ -1099,7 +1011,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.72
+   "seconds": 2.0
   },
   {
    "at": "2026-09-30T13:00:00Z",
@@ -1112,7 +1024,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.94
+   "seconds": 1.85
   },
   {
    "at": "2026-10-01T01:00:00Z",
@@ -1129,7 +1041,7 @@
     "freshness:inference_usage/eu-north1",
     "freshness:storage_snapshot/eu-north1"
    ],
-   "seconds": 1.65
+   "seconds": 1.78
   },
   {
    "at": "2026-10-01T13:00:00Z",
@@ -1143,10 +1055,9 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [
-    "duplicates:vm_lifecycle",
     "heartbeat_coverage:sessions"
    ],
-   "seconds": 2.25
+   "seconds": 2.23
   },
   {
    "at": "2026-10-02T01:00:00Z",
@@ -1160,7 +1071,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.08
+   "seconds": 2.1
   },
   {
    "at": "2026-10-02T13:00:00Z",
@@ -1174,7 +1085,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.03
+   "seconds": 2.2
   },
   {
    "at": "2026-10-03T01:00:00Z",
@@ -1188,10 +1099,9 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [
-    "duplicates:vm_lifecycle",
     "inferred_session_end:sessions"
    ],
-   "seconds": 2.14
+   "seconds": 2.18
   },
   {
    "at": "2026-10-03T12:00:00Z",
@@ -1206,7 +1116,7 @@
    ],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 4.92
+   "seconds": 5.09
   },
   {
    "at": "2026-10-03T13:00:00Z",
@@ -1219,7 +1129,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.38
+   "seconds": 1.48
   },
   {
    "at": "2026-10-04T01:00:00Z",
@@ -1233,7 +1143,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.26
+   "seconds": 2.23
   },
   {
    "at": "2026-10-04T12:00:00Z",
@@ -1249,7 +1159,7 @@
    "alerts_opened": [
     "restatement:2026-09"
    ],
-   "seconds": 2.97
+   "seconds": 2.42
   },
   {
    "at": "2026-10-04T13:00:00Z",
@@ -1262,7 +1172,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.72
+   "seconds": 1.42
   },
   {
    "at": "2026-10-05T01:00:00Z",
@@ -1276,7 +1186,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.36
+   "seconds": 2.17
   },
   {
    "at": "2026-10-05T13:00:00Z",
@@ -1289,7 +1199,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.09
+   "seconds": 1.9
   },
   {
    "at": "2026-10-06T01:00:00Z",
@@ -1306,7 +1216,7 @@
     "token_plausibility:us-central1/qwen-235b/2026-10-06",
     "token_plausibility:us-central1/llama-70b/2026-10-06"
    ],
-   "seconds": 2.24
+   "seconds": 2.23
   },
   {
    "at": "2026-10-06T13:00:00Z",
@@ -1319,10 +1229,9 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [
-    "duplicates:vm_lifecycle",
     "inferred_session_end:sessions"
    ],
-   "seconds": 1.98
+   "seconds": 1.99
   },
   {
    "at": "2026-10-07T01:00:00Z",
@@ -1339,7 +1248,7 @@
     "token_plausibility:us-central1/llama-70b/2026-10-07",
     "token_plausibility:us-central1/qwen-235b/2026-10-07"
    ],
-   "seconds": 2.63
+   "seconds": 2.3
   },
   {
    "at": "2026-10-07T13:00:00Z",
@@ -1352,7 +1261,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.2
+   "seconds": 1.93
   },
   {
    "at": "2026-10-08T01:00:00Z",
@@ -1366,7 +1275,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.53
+   "seconds": 2.2
   },
   {
    "at": "2026-10-08T13:00:00Z",
@@ -1379,7 +1288,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.29
+   "seconds": 2.09
   },
   {
    "at": "2026-10-09T01:00:00Z",
@@ -1393,7 +1302,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.4
+   "seconds": 2.42
   },
   {
    "at": "2026-10-09T13:00:00Z",
@@ -1419,9 +1328,7 @@
    ],
    "closed": [],
    "restated_usd": 0,
-   "alerts_opened": [
-    "duplicates:vm_lifecycle"
-   ],
+   "alerts_opened": [],
    "seconds": 2.53
   },
   {
@@ -1435,7 +1342,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.18
+   "seconds": 2.12
   },
   {
    "at": "2026-10-11T01:00:00Z",
@@ -1449,7 +1356,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.51
+   "seconds": 2.53
   },
   {
    "at": "2026-10-11T13:00:00Z",
@@ -1462,7 +1369,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.33
+   "seconds": 2.11
   },
   {
    "at": "2026-10-12T01:00:00Z",
@@ -1476,7 +1383,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.68
+   "seconds": 2.61
   },
   {
    "at": "2026-10-12T13:00:00Z",
@@ -1489,7 +1396,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.53
+   "seconds": 2.11
   },
   {
    "at": "2026-10-13T01:00:00Z",
@@ -1505,7 +1412,7 @@
    "alerts_opened": [
     "inferred_session_end:sessions"
    ],
-   "seconds": 2.82
+   "seconds": 2.37
   },
   {
    "at": "2026-10-13T13:00:00Z",
@@ -1518,7 +1425,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.35
+   "seconds": 1.98
   },
   {
    "at": "2026-10-14T01:00:00Z",
@@ -1532,7 +1439,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.65
+   "seconds": 2.38
   },
   {
    "at": "2026-10-14T13:00:00Z",
@@ -1545,7 +1452,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.33
+   "seconds": 2.1
   },
   {
    "at": "2026-10-15T01:00:00Z",
@@ -1559,7 +1466,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.63
+   "seconds": 2.41
   },
   {
    "at": "2026-10-15T13:00:00Z",
@@ -1572,7 +1479,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.16
+   "seconds": 2.19
   },
   {
    "at": "2026-10-16T01:00:00Z",
@@ -1585,10 +1492,8 @@
    ],
    "closed": [],
    "restated_usd": 0,
-   "alerts_opened": [
-    "duplicates:vm_lifecycle"
-   ],
-   "seconds": 2.79
+   "alerts_opened": [],
+   "seconds": 2.65
   },
   {
    "at": "2026-10-16T13:00:00Z",
@@ -1608,7 +1513,7 @@
     "freshness:storage_snapshot/eu-west1",
     "freshness:storage_snapshot/us-central1"
    ],
-   "seconds": 2.02
+   "seconds": 1.91
   },
   {
    "at": "2026-10-17T01:00:00Z",
@@ -1622,7 +1527,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 2.52
+   "seconds": 2.57
   },
   {
    "at": "2026-10-17T13:00:00Z",
@@ -1635,7 +1540,7 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.82
+   "seconds": 1.9
   },
   {
    "at": "2026-10-18T00:00:00Z",
@@ -1648,8 +1553,8 @@
    "closed": [],
    "restated_usd": 0,
    "alerts_opened": [],
-   "seconds": 1.87
+   "seconds": 1.92
   }
  ],
- "seconds": 194.6
+ "seconds": 197.3
 }

@@ -1,0 +1,213 @@
+[
+ {
+  "name": "clean",
+  "description": "no faults: nothing may page",
+  "faults": [],
+  "expected": [],
+  "opened": [],
+  "detected": true,
+  "false_alarms": [],
+  "max_error_usd": 0.0,
+  "correct": true,
+  "naive_error_usd": {
+   "2026-09": 1207.52,
+   "2026-10": 8216.03
+  },
+  "seconds": 69.4
+ },
+ {
+  "name": "duplicates",
+  "description": "producers retry (1%, same event_id) and node agents replay their spool (new event_id, same seq)",
+  "faults": [
+   "retries",
+   "replays"
+  ],
+  "expected": [],
+  "opened": [],
+  "detected": true,
+  "false_alarms": [],
+  "max_error_usd": 0.0,
+  "correct": true,
+  "naive_error_usd": {
+   "2026-09": 1344.74,
+   "2026-10": 8489.63
+  },
+  "seconds": 69.6
+ },
+ {
+  "name": "duplicate_storm",
+  "description": "a gateway bug delivers every inference_usage file twice from 8 Oct",
+  "faults": [
+   "retries",
+   "replays"
+  ],
+  "expected": [
+   "duplicates"
+  ],
+  "opened": [
+   "duplicates"
+  ],
+  "detected": true,
+  "false_alarms": [],
+  "max_error_usd": 0.0,
+  "correct": true,
+  "naive_error_usd": {
+   "2026-09": 1344.74,
+   "2026-10": 8520.57
+  },
+  "seconds": 64.9
+ },
+ {
+  "name": "late",
+  "description": "0.5% of events arrive 1 to 48 hours late (absorbed: recomputed, restated if closed)",
+  "faults": [
+   "late"
+  ],
+  "expected": [],
+  "opened": [],
+  "detected": true,
+  "false_alarms": [],
+  "max_error_usd": 0.0,
+  "correct": true,
+  "naive_error_usd": {
+   "2026-09": 1198.79,
+   "2026-10": 8224.76
+  },
+  "seconds": 66.1
+ },
+ {
+  "name": "outage",
+  "description": "eu-north1 collector down 30 Sep 18:00 to 1 Oct 06:00, delivered 4 Oct, after September closed",
+  "faults": [
+   "outage"
+  ],
+  "expected": [
+   "freshness",
+   "restatement"
+  ],
+  "opened": [
+   "freshness",
+   "heartbeat_coverage",
+   "inferred_session_end",
+   "restatement"
+  ],
+  "detected": true,
+  "false_alarms": [
+   "heartbeat_coverage",
+   "inferred_session_end"
+  ],
+  "max_error_usd": 0.0,
+  "correct": true,
+  "naive_error_usd": {
+   "2026-09": 820.79,
+   "2026-10": 8602.76
+  },
+  "seconds": 63.5
+ },
+ {
+  "name": "lost_stops",
+  "description": "2% of stop events are never sent",
+  "faults": [
+   "lost_stops"
+  ],
+  "expected": [
+   "inferred_session_end"
+  ],
+  "opened": [
+   "inferred_session_end"
+  ],
+  "detected": true,
+  "false_alarms": [],
+  "max_error_usd": 0.2,
+  "correct": true,
+  "naive_error_usd": {
+   "2026-09": 1205.56,
+   "2026-10": 8217.99
+  },
+  "seconds": 64.5
+ },
+ {
+  "name": "clock_skew",
+  "description": "15% of hosts have clocks off by 30 s to 5 min",
+  "faults": [
+   "skew"
+  ],
+  "expected": [
+   "clock_skew"
+  ],
+  "opened": [
+   "clock_skew"
+  ],
+  "detected": true,
+  "false_alarms": [],
+  "max_error_usd": 0.0,
+  "correct": true,
+  "naive_error_usd": {
+   "2026-09": 1207.52,
+   "2026-10": 8216.03
+  },
+  "seconds": 64.1
+ },
+ {
+  "name": "schema_v2",
+  "description": "eu-west1 ships lifecycle schema v2 (declared in the contract): upcast, no alert",
+  "faults": [
+   "schema_v2"
+  ],
+  "expected": [],
+  "opened": [],
+  "detected": true,
+  "false_alarms": [],
+  "max_error_usd": 0.0,
+  "correct": true,
+  "naive_error_usd": {
+   "2026-09": 1207.52,
+   "2026-10": 8049.16
+  },
+  "seconds": 62.5
+ },
+ {
+  "name": "unit_bug",
+  "description": "us-central1 gateway reports tokens in thousands for 36 h, then re-sends corrected revisions",
+  "faults": [
+   "unit_bug"
+  ],
+  "expected": [
+   "token_plausibility"
+  ],
+  "opened": [
+   "token_plausibility"
+  ],
+  "detected": true,
+  "false_alarms": [],
+  "max_error_usd": 0.0,
+  "correct": true,
+  "naive_error_usd": {
+   "2026-09": 1207.52,
+   "2026-10": 8216.03
+  },
+  "seconds": 65.0
+ },
+ {
+  "name": "undeclared_rename",
+  "description": "eu-west1 storage renames a field without a contract change: records are quarantined, not guessed",
+  "faults": [],
+  "expected": [
+   "quarantine",
+   "freshness"
+  ],
+  "opened": [
+   "freshness",
+   "quarantine"
+  ],
+  "detected": true,
+  "false_alarms": [],
+  "max_error_usd": 38.91,
+  "correct": false,
+  "naive_error_usd": {
+   "2026-09": 1207.52,
+   "2026-10": 8150.7
+  },
+  "seconds": 66.3
+ }
+]
