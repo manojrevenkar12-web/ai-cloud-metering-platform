@@ -1,0 +1,1879 @@
+[
+ {
+  "eventType": "COMPLETE",
+  "eventTime": "2026-10-25T20:12:36.060632+00:00",
+  "run": {
+   "runId": "00000000-0000-0000-0000-000000000000"
+  },
+  "job": {
+   "namespace": "acm",
+   "name": "01_silver_vm_events"
+  },
+  "inputs": [
+   {
+    "namespace": "acm",
+    "name": "bronze_vm_lifecycle"
+   }
+  ],
+  "outputs": [
+   {
+    "namespace": "acm",
+    "name": "silver_vm_events",
+    "facets": {
+     "columnLineage": {
+      "fields": {
+       "event_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_vm_lifecycle",
+          "field": "event_id"
+         }
+        ]
+       },
+       "vm_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_vm_lifecycle",
+          "field": "vm_id"
+         }
+        ]
+       },
+       "customer_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_vm_lifecycle",
+          "field": "customer_id"
+         }
+        ]
+       },
+       "project_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_vm_lifecycle",
+          "field": "project_id"
+         }
+        ]
+       },
+       "event_type": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_vm_lifecycle",
+          "field": "event_type"
+         }
+        ]
+       },
+       "event_ts": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_vm_lifecycle",
+          "field": "event_time_ts"
+         }
+        ]
+       },
+       "region": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_vm_lifecycle",
+          "field": "region"
+         }
+        ]
+       },
+       "gpu_type": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_vm_lifecycle",
+          "field": "gpu_type"
+         }
+        ]
+       },
+       "gpu_count": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_vm_lifecycle",
+          "field": "gpu_count"
+         }
+        ]
+       },
+       "host_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_vm_lifecycle",
+          "field": "host_id"
+         }
+        ]
+       },
+       "schema_version": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_vm_lifecycle",
+          "field": "schema_version"
+         }
+        ]
+       },
+       "source_file": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_vm_lifecycle",
+          "field": "_file"
+         }
+        ]
+       },
+       "visible_at": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_vm_lifecycle",
+          "field": "_visible_at"
+         }
+        ]
+       }
+      }
+     }
+    }
+   }
+  ],
+  "producer": "https://github.com/manojrevenkar12-web/ai-cloud-metering-platform"
+ },
+ {
+  "eventType": "COMPLETE",
+  "eventTime": "2026-10-25T20:12:36.060632+00:00",
+  "run": {
+   "runId": "00000000-0000-0000-0000-000000000000"
+  },
+  "job": {
+   "namespace": "acm",
+   "name": "02_silver_vms"
+  },
+  "inputs": [
+   {
+    "namespace": "acm",
+    "name": "silver_vm_events"
+   }
+  ],
+  "outputs": [
+   {
+    "namespace": "acm",
+    "name": "silver_vms",
+    "facets": {
+     "columnLineage": {
+      "fields": {
+       "vm_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vm_events",
+          "field": "vm_id"
+         }
+        ]
+       },
+       "customer_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vm_events",
+          "field": "customer_id"
+         }
+        ]
+       },
+       "project_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vm_events",
+          "field": "project_id"
+         }
+        ]
+       },
+       "region": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vm_events",
+          "field": "region"
+         }
+        ]
+       },
+       "gpu_type": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vm_events",
+          "field": "gpu_type"
+         }
+        ]
+       },
+       "gpu_count": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vm_events",
+          "field": "gpu_count"
+         }
+        ]
+       },
+       "host_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vm_events",
+          "field": "host_id"
+         }
+        ]
+       },
+       "created_at": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vm_events",
+          "field": "event_ts"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vm_events",
+          "field": "event_type"
+         }
+        ]
+       },
+       "started_at": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vm_events",
+          "field": "event_ts"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vm_events",
+          "field": "event_type"
+         }
+        ]
+       },
+       "stopped_at": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vm_events",
+          "field": "event_ts"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vm_events",
+          "field": "event_type"
+         }
+        ]
+       },
+       "deleted_at": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vm_events",
+          "field": "event_ts"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vm_events",
+          "field": "event_type"
+         }
+        ]
+       },
+       "gpu_type_variants": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vm_events",
+          "field": "gpu_type"
+         }
+        ]
+       }
+      }
+     }
+    }
+   }
+  ],
+  "producer": "https://github.com/manojrevenkar12-web/ai-cloud-metering-platform"
+ },
+ {
+  "eventType": "COMPLETE",
+  "eventTime": "2026-10-25T20:12:36.060632+00:00",
+  "run": {
+   "runId": "00000000-0000-0000-0000-000000000000"
+  },
+  "job": {
+   "namespace": "acm",
+   "name": "03_silver_heartbeats"
+  },
+  "inputs": [
+   {
+    "namespace": "acm",
+    "name": "bronze_gpu_heartbeat"
+   },
+   {
+    "namespace": "acm",
+    "name": "silver_vms"
+   }
+  ],
+  "outputs": [
+   {
+    "namespace": "acm",
+    "name": "silver_heartbeats",
+    "facets": {
+     "columnLineage": {
+      "fields": {
+       "vm_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_gpu_heartbeat",
+          "field": "vm_id"
+         }
+        ]
+       },
+       "seq": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_gpu_heartbeat",
+          "field": "seq"
+         }
+        ]
+       },
+       "customer_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "customer_id"
+         }
+        ]
+       },
+       "region": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "region"
+         }
+        ]
+       },
+       "gpu_type": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "gpu_type"
+         }
+        ]
+       },
+       "gpu_count": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "gpu_count"
+         }
+        ]
+       },
+       "host_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_gpu_heartbeat",
+          "field": "host_id"
+         }
+        ]
+       },
+       "beat_ts": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_gpu_heartbeat",
+          "field": "seq"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "started_at"
+         }
+        ]
+       },
+       "host_skew_s": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_gpu_heartbeat",
+          "field": "host_time_ts"
+         },
+         {
+          "namespace": "acm",
+          "name": "bronze_gpu_heartbeat",
+          "field": "seq"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "started_at"
+         }
+        ]
+       },
+       "gpu_util_pct": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_gpu_heartbeat",
+          "field": "gpu_util_pct"
+         }
+        ]
+       },
+       "gpu_mem_used_gb": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_gpu_heartbeat",
+          "field": "gpu_mem_used_gb"
+         }
+        ]
+       },
+       "event_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_gpu_heartbeat",
+          "field": "event_id"
+         }
+        ]
+       },
+       "visible_at": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_gpu_heartbeat",
+          "field": "_visible_at"
+         }
+        ]
+       },
+       "copies": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_gpu_heartbeat",
+          "field": "seq"
+         },
+         {
+          "namespace": "acm",
+          "name": "bronze_gpu_heartbeat",
+          "field": "vm_id"
+         }
+        ]
+       }
+      }
+     }
+    }
+   }
+  ],
+  "producer": "https://github.com/manojrevenkar12-web/ai-cloud-metering-platform"
+ },
+ {
+  "eventType": "COMPLETE",
+  "eventTime": "2026-10-25T20:12:36.060632+00:00",
+  "run": {
+   "runId": "00000000-0000-0000-0000-000000000000"
+  },
+  "job": {
+   "namespace": "acm",
+   "name": "04_silver_vm_sessions"
+  },
+  "inputs": [
+   {
+    "namespace": "acm",
+    "name": "silver_heartbeats"
+   },
+   {
+    "namespace": "acm",
+    "name": "silver_vms"
+   }
+  ],
+  "outputs": [
+   {
+    "namespace": "acm",
+    "name": "silver_vm_sessions",
+    "facets": {
+     "columnLineage": {
+      "fields": {
+       "vm_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_heartbeats",
+          "field": "vm_id"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "vm_id"
+         }
+        ]
+       },
+       "customer_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "customer_id"
+         }
+        ]
+       },
+       "project_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "project_id"
+         }
+        ]
+       },
+       "region": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "region"
+         }
+        ]
+       },
+       "gpu_type": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "gpu_type"
+         }
+        ]
+       },
+       "gpu_count": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "gpu_count"
+         }
+        ]
+       },
+       "host_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "host_id"
+         }
+        ]
+       },
+       "created_at": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "created_at"
+         }
+        ]
+       },
+       "started_at": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "started_at"
+         }
+        ]
+       },
+       "stopped_at": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "stopped_at"
+         }
+        ]
+       },
+       "deleted_at": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "deleted_at"
+         }
+        ]
+       },
+       "gpu_type_variants": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "gpu_type_variants"
+         }
+        ]
+       },
+       "last_beat": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_heartbeats",
+          "field": "beat_ts"
+         }
+        ]
+       },
+       "beats": {
+        "inputFields": []
+       },
+       "duplicate_beats": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_heartbeats",
+          "field": "copies"
+         }
+        ]
+       },
+       "host_skew_s": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_heartbeats",
+          "field": "host_skew_s"
+         }
+        ]
+       },
+       "end_source": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_heartbeats",
+          "field": "beat_ts"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "deleted_at"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "stopped_at"
+         }
+        ]
+       },
+       "billed_until": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_heartbeats",
+          "field": "beat_ts"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "deleted_at"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "started_at"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vms",
+          "field": "stopped_at"
+         }
+        ]
+       }
+      }
+     }
+    }
+   }
+  ],
+  "producer": "https://github.com/manojrevenkar12-web/ai-cloud-metering-platform"
+ },
+ {
+  "eventType": "COMPLETE",
+  "eventTime": "2026-10-25T20:12:36.060632+00:00",
+  "run": {
+   "runId": "00000000-0000-0000-0000-000000000000"
+  },
+  "job": {
+   "namespace": "acm",
+   "name": "05_silver_inference"
+  },
+  "inputs": [
+   {
+    "namespace": "acm",
+    "name": "bronze_inference_usage"
+   }
+  ],
+  "outputs": [
+   {
+    "namespace": "acm",
+    "name": "silver_inference",
+    "facets": {
+     "columnLineage": {
+      "fields": {
+       "event_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_inference_usage",
+          "field": "event_id"
+         }
+        ]
+       },
+       "revision": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_inference_usage",
+          "field": "revision"
+         }
+        ]
+       },
+       "customer_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_inference_usage",
+          "field": "customer_id"
+         }
+        ]
+       },
+       "model": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_inference_usage",
+          "field": "model"
+         }
+        ]
+       },
+       "region": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_inference_usage",
+          "field": "region"
+         }
+        ]
+       },
+       "window_ts": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_inference_usage",
+          "field": "window_start_ts"
+         }
+        ]
+       },
+       "requests": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_inference_usage",
+          "field": "requests"
+         }
+        ]
+       },
+       "input_tokens": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_inference_usage",
+          "field": "input_tokens"
+         }
+        ]
+       },
+       "output_tokens": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_inference_usage",
+          "field": "output_tokens"
+         }
+        ]
+       },
+       "api_key_owner": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_inference_usage",
+          "field": "api_key_owner"
+         }
+        ]
+       },
+       "visible_at": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_inference_usage",
+          "field": "_visible_at"
+         }
+        ]
+       },
+       "copies": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_inference_usage",
+          "field": "event_id"
+         }
+        ]
+       }
+      }
+     }
+    }
+   }
+  ],
+  "producer": "https://github.com/manojrevenkar12-web/ai-cloud-metering-platform"
+ },
+ {
+  "eventType": "COMPLETE",
+  "eventTime": "2026-10-25T20:12:36.060632+00:00",
+  "run": {
+   "runId": "00000000-0000-0000-0000-000000000000"
+  },
+  "job": {
+   "namespace": "acm",
+   "name": "06_silver_storage"
+  },
+  "inputs": [
+   {
+    "namespace": "acm",
+    "name": "bronze_storage_snapshot"
+   }
+  ],
+  "outputs": [
+   {
+    "namespace": "acm",
+    "name": "silver_storage",
+    "facets": {
+     "columnLineage": {
+      "fields": {
+       "event_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_storage_snapshot",
+          "field": "event_id"
+         }
+        ]
+       },
+       "bucket_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_storage_snapshot",
+          "field": "bucket_id"
+         }
+        ]
+       },
+       "customer_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_storage_snapshot",
+          "field": "customer_id"
+         }
+        ]
+       },
+       "region": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_storage_snapshot",
+          "field": "region"
+         }
+        ]
+       },
+       "snapshot_ts": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_storage_snapshot",
+          "field": "snapshot_time_ts"
+         }
+        ]
+       },
+       "bytes_stored": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_storage_snapshot",
+          "field": "bytes_stored"
+         }
+        ]
+       },
+       "visible_at": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "bronze_storage_snapshot",
+          "field": "_visible_at"
+         }
+        ]
+       }
+      }
+     }
+    }
+   }
+  ],
+  "producer": "https://github.com/manojrevenkar12-web/ai-cloud-metering-platform"
+ },
+ {
+  "eventType": "COMPLETE",
+  "eventTime": "2026-10-25T20:12:36.060632+00:00",
+  "run": {
+   "runId": "00000000-0000-0000-0000-000000000000"
+  },
+  "job": {
+   "namespace": "acm",
+   "name": "07_silver_commitment_terms"
+  },
+  "inputs": [
+   {
+    "namespace": "acm",
+    "name": "ref_commitments"
+   }
+  ],
+  "outputs": [
+   {
+    "namespace": "acm",
+    "name": "silver_commitment_terms",
+    "facets": {
+     "columnLineage": {
+      "fields": {
+       "commitment_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "ref_commitments",
+          "field": "commitment_id"
+         }
+        ]
+       },
+       "customer_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "ref_commitments",
+          "field": "customer_id"
+         }
+        ]
+       },
+       "gpu_type": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "ref_commitments",
+          "field": "gpu_type"
+         }
+        ]
+       },
+       "region": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "ref_commitments",
+          "field": "region"
+         }
+        ]
+       },
+       "gpus": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "ref_commitments",
+          "field": "gpus"
+         }
+        ]
+       },
+       "usd_per_gpu_hour": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "ref_commitments",
+          "field": "usd_per_gpu_hour"
+         }
+        ]
+       },
+       "starts": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "ref_commitments",
+          "field": "starts"
+         }
+        ]
+       },
+       "ends": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "ref_commitments",
+          "field": "ends"
+         },
+         {
+          "namespace": "acm",
+          "name": "ref_commitments",
+          "field": "starts"
+         }
+        ]
+       },
+       "replaced": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "ref_commitments",
+          "field": "starts"
+         }
+        ]
+       }
+      }
+     }
+    }
+   }
+  ],
+  "producer": "https://github.com/manojrevenkar12-web/ai-cloud-metering-platform"
+ },
+ {
+  "eventType": "COMPLETE",
+  "eventTime": "2026-10-25T20:12:36.060632+00:00",
+  "run": {
+   "runId": "00000000-0000-0000-0000-000000000000"
+  },
+  "job": {
+   "namespace": "acm",
+   "name": "10_gold_gpu_minutes"
+  },
+  "inputs": [
+   {
+    "namespace": "acm",
+    "name": "ref_prices"
+   },
+   {
+    "namespace": "acm",
+    "name": "silver_commitment_terms"
+   },
+   {
+    "namespace": "acm",
+    "name": "silver_vm_sessions"
+   }
+  ],
+  "outputs": [
+   {
+    "namespace": "acm",
+    "name": "gold_gpu_minutes",
+    "facets": {
+     "columnLineage": {
+      "fields": {
+       "month": {
+        "inputFields": []
+       },
+       "customer_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vm_sessions",
+          "field": "customer_id"
+         }
+        ]
+       },
+       "gpu_type": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vm_sessions",
+          "field": "gpu_type"
+         }
+        ]
+       },
+       "region": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vm_sessions",
+          "field": "region"
+         }
+        ]
+       },
+       "minute": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vm_sessions",
+          "field": "billed_until"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vm_sessions",
+          "field": "started_at"
+         }
+        ]
+       },
+       "gpu_seconds": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_vm_sessions",
+          "field": "billed_until"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vm_sessions",
+          "field": "gpu_count"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vm_sessions",
+          "field": "started_at"
+         }
+        ]
+       },
+       "committed_seconds": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_commitment_terms",
+          "field": "gpus"
+         }
+        ]
+       },
+       "overage_seconds": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_commitment_terms",
+          "field": "gpus"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vm_sessions",
+          "field": "billed_until"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vm_sessions",
+          "field": "gpu_count"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_vm_sessions",
+          "field": "started_at"
+         }
+        ]
+       },
+       "usd_per_gpu_hour": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "ref_prices",
+          "field": "usd"
+         }
+        ]
+       }
+      }
+     }
+    }
+   }
+  ],
+  "producer": "https://github.com/manojrevenkar12-web/ai-cloud-metering-platform"
+ },
+ {
+  "eventType": "COMPLETE",
+  "eventTime": "2026-10-25T20:12:36.060632+00:00",
+  "run": {
+   "runId": "00000000-0000-0000-0000-000000000000"
+  },
+  "job": {
+   "namespace": "acm",
+   "name": "11_gold_charges"
+  },
+  "inputs": [
+   {
+    "namespace": "acm",
+    "name": "gold_gpu_minutes"
+   },
+   {
+    "namespace": "acm",
+    "name": "ref_prices"
+   },
+   {
+    "namespace": "acm",
+    "name": "silver_commitment_terms"
+   },
+   {
+    "namespace": "acm",
+    "name": "silver_inference"
+   },
+   {
+    "namespace": "acm",
+    "name": "silver_storage"
+   }
+  ],
+  "outputs": [
+   {
+    "namespace": "acm",
+    "name": "gold_charges",
+    "facets": {
+     "columnLineage": {
+      "fields": {
+       "month": {
+        "inputFields": []
+       },
+       "customer_id": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "gold_gpu_minutes",
+          "field": "customer_id"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_commitment_terms",
+          "field": "customer_id"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_inference",
+          "field": "customer_id"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_storage",
+          "field": "customer_id"
+         }
+        ]
+       },
+       "gpu_on_demand": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "gold_gpu_minutes",
+          "field": "overage_seconds"
+         },
+         {
+          "namespace": "acm",
+          "name": "gold_gpu_minutes",
+          "field": "usd_per_gpu_hour"
+         }
+        ]
+       },
+       "commitment": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_commitment_terms",
+          "field": "ends"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_commitment_terms",
+          "field": "gpus"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_commitment_terms",
+          "field": "starts"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_commitment_terms",
+          "field": "usd_per_gpu_hour"
+         }
+        ]
+       },
+       "inference": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "ref_prices",
+          "field": "usd"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_inference",
+          "field": "input_tokens"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_inference",
+          "field": "output_tokens"
+         }
+        ]
+       },
+       "storage": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "ref_prices",
+          "field": "usd"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_storage",
+          "field": "bytes_stored"
+         }
+        ]
+       },
+       "gpu_seconds": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "gold_gpu_minutes",
+          "field": "gpu_seconds"
+         }
+        ]
+       },
+       "unpriced_seconds": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "gold_gpu_minutes",
+          "field": "overage_seconds"
+         },
+         {
+          "namespace": "acm",
+          "name": "gold_gpu_minutes",
+          "field": "usd_per_gpu_hour"
+         }
+        ]
+       }
+      }
+     }
+    }
+   }
+  ],
+  "producer": "https://github.com/manojrevenkar12-web/ai-cloud-metering-platform"
+ },
+ {
+  "eventType": "COMPLETE",
+  "eventTime": "2026-10-25T20:12:36.060632+00:00",
+  "run": {
+   "runId": "00000000-0000-0000-0000-000000000000"
+  },
+  "job": {
+   "namespace": "acm",
+   "name": "20_mart_product_capacity"
+  },
+  "inputs": [
+   {
+    "namespace": "acm",
+    "name": "gold_gpu_minutes"
+   },
+   {
+    "namespace": "acm",
+    "name": "silver_commitment_terms"
+   },
+   {
+    "namespace": "acm",
+    "name": "silver_heartbeats"
+   }
+  ],
+  "outputs": [
+   {
+    "namespace": "acm",
+    "name": "mart_product_capacity",
+    "facets": {
+     "columnLineage": {
+      "fields": {
+       "day": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "gold_gpu_minutes",
+          "field": "minute"
+         }
+        ]
+       },
+       "region": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "gold_gpu_minutes",
+          "field": "region"
+         }
+        ]
+       },
+       "gpu_type": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "gold_gpu_minutes",
+          "field": "gpu_type"
+         }
+        ]
+       },
+       "allocated_gpu_hours": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "gold_gpu_minutes",
+          "field": "gpu_seconds"
+         }
+        ]
+       },
+       "busy_gpu_hours": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "silver_heartbeats",
+          "field": "gpu_count"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_heartbeats",
+          "field": "gpu_util_pct"
+         }
+        ]
+       },
+       "committed_gpu_hours": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "gold_gpu_minutes",
+          "field": "minute"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_commitment_terms",
+          "field": "ends"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_commitment_terms",
+          "field": "gpus"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_commitment_terms",
+          "field": "starts"
+         }
+        ]
+       },
+       "heartbeat_coverage": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "gold_gpu_minutes",
+          "field": "gpu_seconds"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_heartbeats",
+          "field": "gpu_count"
+         }
+        ]
+       },
+       "low_coverage": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "gold_gpu_minutes",
+          "field": "gpu_seconds"
+         },
+         {
+          "namespace": "acm",
+          "name": "silver_heartbeats",
+          "field": "gpu_count"
+         }
+        ]
+       }
+      }
+     }
+    }
+   }
+  ],
+  "producer": "https://github.com/manojrevenkar12-web/ai-cloud-metering-platform"
+ },
+ {
+  "eventType": "COMPLETE",
+  "eventTime": "2026-10-25T20:12:36.060632+00:00",
+  "run": {
+   "runId": "00000000-0000-0000-0000-000000000000"
+  },
+  "job": {
+   "namespace": "acm",
+   "name": "periods.py"
+  },
+  "inputs": [
+   {
+    "namespace": "acm",
+    "name": "gold_charges"
+   },
+   {
+    "namespace": "acm",
+    "name": "ref_credit_grants"
+   }
+  ],
+  "outputs": [
+   {
+    "namespace": "acm",
+    "name": "gold_credits",
+    "facets": {
+     "columnLineage": {
+      "fields": {
+       "credits_applied": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "gold_charges",
+          "field": "gpu_on_demand"
+         },
+         {
+          "namespace": "acm",
+          "name": "gold_charges",
+          "field": "inference"
+         },
+         {
+          "namespace": "acm",
+          "name": "gold_charges",
+          "field": "storage"
+         },
+         {
+          "namespace": "acm",
+          "name": "ref_credit_grants",
+          "field": "usd"
+         }
+        ]
+       }
+      }
+     }
+    }
+   }
+  ],
+  "producer": "https://github.com/manojrevenkar12-web/ai-cloud-metering-platform"
+ },
+ {
+  "eventType": "COMPLETE",
+  "eventTime": "2026-10-25T20:12:36.060632+00:00",
+  "run": {
+   "runId": "00000000-0000-0000-0000-000000000000"
+  },
+  "job": {
+   "namespace": "acm",
+   "name": "periods.py"
+  },
+  "inputs": [
+   {
+    "namespace": "acm",
+    "name": "gold_charges"
+   },
+   {
+    "namespace": "acm",
+    "name": "gold_credits"
+   }
+  ],
+  "outputs": [
+   {
+    "namespace": "acm",
+    "name": "revenue_current",
+    "facets": {
+     "columnLineage": {
+      "fields": {
+       "gpu_on_demand": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "gold_charges",
+          "field": "gpu_on_demand"
+         }
+        ]
+       },
+       "commitment": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "gold_charges",
+          "field": "commitment"
+         }
+        ]
+       },
+       "inference": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "gold_charges",
+          "field": "inference"
+         }
+        ]
+       },
+       "storage": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "gold_charges",
+          "field": "storage"
+         }
+        ]
+       },
+       "credits_applied": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "gold_credits",
+          "field": "credits_applied"
+         },
+         {
+          "namespace": "acm",
+          "name": "gold_charges",
+          "field": "gpu_on_demand"
+         },
+         {
+          "namespace": "acm",
+          "name": "gold_charges",
+          "field": "inference"
+         },
+         {
+          "namespace": "acm",
+          "name": "gold_charges",
+          "field": "storage"
+         }
+        ]
+       }
+      }
+     }
+    }
+   }
+  ],
+  "producer": "https://github.com/manojrevenkar12-web/ai-cloud-metering-platform"
+ },
+ {
+  "eventType": "COMPLETE",
+  "eventTime": "2026-10-25T20:12:36.060632+00:00",
+  "run": {
+   "runId": "00000000-0000-0000-0000-000000000000"
+  },
+  "job": {
+   "namespace": "acm",
+   "name": "periods.py"
+  },
+  "inputs": [
+   {
+    "namespace": "acm",
+    "name": "revenue_current"
+   },
+   {
+    "namespace": "acm",
+    "name": "period_status"
+   }
+  ],
+  "outputs": [
+   {
+    "namespace": "acm",
+    "name": "revenue_ledger",
+    "facets": {
+     "columnLineage": {
+      "fields": {
+       "amount": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "revenue_current",
+          "field": "gpu_on_demand"
+         },
+         {
+          "namespace": "acm",
+          "name": "revenue_current",
+          "field": "commitment"
+         },
+         {
+          "namespace": "acm",
+          "name": "revenue_current",
+          "field": "inference"
+         },
+         {
+          "namespace": "acm",
+          "name": "revenue_current",
+          "field": "storage"
+         },
+         {
+          "namespace": "acm",
+          "name": "revenue_current",
+          "field": "credits_applied"
+         }
+        ]
+       }
+      }
+     }
+    }
+   }
+  ],
+  "producer": "https://github.com/manojrevenkar12-web/ai-cloud-metering-platform"
+ },
+ {
+  "eventType": "COMPLETE",
+  "eventTime": "2026-10-25T20:12:36.060632+00:00",
+  "run": {
+   "runId": "00000000-0000-0000-0000-000000000000"
+  },
+  "job": {
+   "namespace": "acm",
+   "name": "periods.py"
+  },
+  "inputs": [
+   {
+    "namespace": "acm",
+    "name": "revenue_ledger"
+   },
+   {
+    "namespace": "acm",
+    "name": "revenue_current"
+   },
+   {
+    "namespace": "acm",
+    "name": "period_status"
+   }
+  ],
+  "outputs": [
+   {
+    "namespace": "acm",
+    "name": "mart_finance_revenue",
+    "facets": {
+     "columnLineage": {
+      "fields": {
+       "gpu_on_demand": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "revenue_ledger",
+          "field": "amount"
+         },
+         {
+          "namespace": "acm",
+          "name": "revenue_current",
+          "field": "gpu_on_demand"
+         }
+        ]
+       },
+       "commitment": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "revenue_ledger",
+          "field": "amount"
+         },
+         {
+          "namespace": "acm",
+          "name": "revenue_current",
+          "field": "commitment"
+         }
+        ]
+       },
+       "inference": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "revenue_ledger",
+          "field": "amount"
+         },
+         {
+          "namespace": "acm",
+          "name": "revenue_current",
+          "field": "inference"
+         }
+        ]
+       },
+       "storage": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "revenue_ledger",
+          "field": "amount"
+         },
+         {
+          "namespace": "acm",
+          "name": "revenue_current",
+          "field": "storage"
+         }
+        ]
+       },
+       "credits_applied": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "revenue_ledger",
+          "field": "amount"
+         },
+         {
+          "namespace": "acm",
+          "name": "revenue_current",
+          "field": "credits_applied"
+         }
+        ]
+       },
+       "total": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "revenue_ledger",
+          "field": "amount"
+         },
+         {
+          "namespace": "acm",
+          "name": "revenue_current",
+          "field": "gpu_on_demand"
+         },
+         {
+          "namespace": "acm",
+          "name": "revenue_current",
+          "field": "commitment"
+         },
+         {
+          "namespace": "acm",
+          "name": "revenue_current",
+          "field": "inference"
+         },
+         {
+          "namespace": "acm",
+          "name": "revenue_current",
+          "field": "storage"
+         },
+         {
+          "namespace": "acm",
+          "name": "revenue_current",
+          "field": "credits_applied"
+         }
+        ]
+       },
+       "closed_total": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "revenue_ledger",
+          "field": "amount"
+         }
+        ]
+       },
+       "adjustments": {
+        "inputFields": [
+         {
+          "namespace": "acm",
+          "name": "revenue_ledger",
+          "field": "amount"
+         }
+        ]
+       }
+      }
+     }
+    }
+   }
+  ],
+  "producer": "https://github.com/manojrevenkar12-web/ai-cloud-metering-platform"
+ }
+]

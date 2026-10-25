@@ -1,0 +1,1655 @@
+{
+ "world": {
+  "seed": 7,
+  "customers": 36,
+  "vms": 236,
+  "commitments": 12,
+  "events_ingested": 378484,
+  "events_quarantined": 0,
+  "landing_files": 3648,
+  "pipeline_runs": 97,
+  "step_hours": 12,
+  "faults": "all",
+  "bronze_files_after_compaction": 180
+ },
+ "evaluation": {
+  "2026-09": {
+   "customers": 36,
+   "truth": 449769.31,
+   "ours": 449769.3,
+   "max_customer_error": 0.01,
+   "customers_with_inferred_stop": 2,
+   "max_error_without_inferred_stop": 0.0,
+   "max_error_with_inferred_stop": 0.01,
+   "closed_total": 449724.84,
+   "adjustments": 44.46
+  },
+  "2026-10": {
+   "customers": 36,
+   "truth": 272615.55,
+   "ours": 272615.55,
+   "max_customer_error": 0.0,
+   "customers_with_inferred_stop": 9,
+   "max_error_without_inferred_stop": 0.0,
+   "max_error_with_inferred_stop": 0.0
+  },
+  "naive": {
+   "2026-09": {
+    "truth": 449769.31,
+    "naive": 480108.62,
+    "naive_at_close": 480108.62
+   },
+   "2026-10": {
+    "truth": 272615.55,
+    "naive": 317808.15,
+    "naive_at_close": 45948.49
+   }
+  }
+ },
+ "alerts": [
+  {
+   "check": "duplicates",
+   "key": "vm_lifecycle",
+   "severity": "warn",
+   "opened_at": "2026-09-03T01:00:00Z",
+   "resolved_at": "2026-09-04T01:00:00Z",
+   "message": "4.0% duplicate copies in vm_lifecycle over the last 24 h",
+   "after_simulation_end": false
+  },
+  {
+   "check": "clock_skew",
+   "key": "hosts",
+   "severity": "warn",
+   "opened_at": "2026-09-03T13:00:00Z",
+   "resolved_at": null,
+   "message": "1 hosts with clocks off by more than 60 s (corrected from the schedule)",
+   "after_simulation_end": false
+  },
+  {
+   "check": "inferred_session_end",
+   "key": "sessions",
+   "severity": "warn",
+   "opened_at": "2026-09-05T13:00:00Z",
+   "resolved_at": "2026-09-08T13:00:00Z",
+   "message": "1 sessions in the last 72 h ended without a stop event (billed to one heartbeat after the last)",
+   "after_simulation_end": false
+  },
+  {
+   "check": "duplicates",
+   "key": "vm_lifecycle",
+   "severity": "warn",
+   "opened_at": "2026-09-14T01:00:00Z",
+   "resolved_at": "2026-09-15T01:00:00Z",
+   "message": "6.9% duplicate copies in vm_lifecycle over the last 24 h",
+   "after_simulation_end": false
+  },
+  {
+   "check": "inferred_session_end",
+   "key": "sessions",
+   "severity": "warn",
+   "opened_at": "2026-09-14T01:00:00Z",
+   "resolved_at": "2026-09-17T01:00:00Z",
+   "message": "1 sessions in the last 72 h ended without a stop event (billed to one heartbeat after the last)",
+   "after_simulation_end": false
+  },
+  {
+   "check": "duplicates",
+   "key": "vm_lifecycle",
+   "severity": "warn",
+   "opened_at": "2026-09-17T13:00:00Z",
+   "resolved_at": "2026-09-18T13:00:00Z",
+   "message": "9.1% duplicate copies in vm_lifecycle over the last 24 h",
+   "after_simulation_end": false
+  },
+  {
+   "check": "duplicates",
+   "key": "vm_lifecycle",
+   "severity": "warn",
+   "opened_at": "2026-09-22T01:00:00Z",
+   "resolved_at": "2026-09-23T13:00:00Z",
+   "message": "6.7% duplicate copies in vm_lifecycle over the last 24 h",
+   "after_simulation_end": false
+  },
+  {
+   "check": "inferred_session_end",
+   "key": "sessions",
+   "severity": "warn",
+   "opened_at": "2026-09-28T13:00:00Z",
+   "resolved_at": "2026-10-01T13:00:00Z",
+   "message": "1 sessions in the last 72 h ended without a stop event (billed to one heartbeat after the last)",
+   "after_simulation_end": false
+  },
+  {
+   "check": "freshness",
+   "key": "inference_usage/eu-north1",
+   "severity": "error",
+   "opened_at": "2026-10-01T01:00:00Z",
+   "resolved_at": "2026-10-01T13:00:00Z",
+   "message": "no inference_usage from eu-north1 for 7.2 h",
+   "after_simulation_end": false
+  },
+  {
+   "check": "freshness",
+   "key": "storage_snapshot/eu-north1",
+   "severity": "error",
+   "opened_at": "2026-10-01T01:00:00Z",
+   "resolved_at": "2026-10-01T13:00:00Z",
+   "message": "no storage_snapshot from eu-north1 for 8.0 h",
+   "after_simulation_end": false
+  },
+  {
+   "check": "duplicates",
+   "key": "vm_lifecycle",
+   "severity": "warn",
+   "opened_at": "2026-10-01T13:00:00Z",
+   "resolved_at": "2026-10-02T13:00:00Z",
+   "message": "3.2% duplicate copies in vm_lifecycle over the last 24 h",
+   "after_simulation_end": false
+  },
+  {
+   "check": "heartbeat_coverage",
+   "key": "sessions",
+   "severity": "warn",
+   "opened_at": "2026-10-01T13:00:00Z",
+   "resolved_at": "2026-10-03T12:00:00Z",
+   "message": "1 sessions with under 80% heartbeat coverage",
+   "after_simulation_end": false
+  },
+  {
+   "check": "duplicates",
+   "key": "vm_lifecycle",
+   "severity": "warn",
+   "opened_at": "2026-10-03T01:00:00Z",
+   "resolved_at": "2026-10-05T13:00:00Z",
+   "message": "3.7% duplicate copies in vm_lifecycle over the last 24 h",
+   "after_simulation_end": false
+  },
+  {
+   "check": "inferred_session_end",
+   "key": "sessions",
+   "severity": "warn",
+   "opened_at": "2026-10-03T01:00:00Z",
+   "resolved_at": "2026-10-03T12:00:00Z",
+   "message": "1 sessions in the last 72 h ended without a stop event (billed to one heartbeat after the last)",
+   "after_simulation_end": false
+  },
+  {
+   "check": "restatement",
+   "key": "2026-09",
+   "severity": "warn",
+   "opened_at": "2026-10-04T12:00:00Z",
+   "resolved_at": null,
+   "message": "closed month restated by $74.12 gross (events ingested after close: 362 gpu_heartbeat, 266 inference_usage, 208 storage_snapshot)",
+   "after_simulation_end": false
+  },
+  {
+   "check": "token_plausibility",
+   "key": "us-central1/qwen-235b/2026-10-06",
+   "severity": "error",
+   "opened_at": "2026-10-06T01:00:00Z",
+   "resolved_at": "2026-10-08T13:00:00Z",
+   "message": "median 1.0 input tokens per request on us-central1 qwen-235b 2026-10-06",
+   "after_simulation_end": false
+  },
+  {
+   "check": "token_plausibility",
+   "key": "us-central1/llama-70b/2026-10-06",
+   "severity": "error",
+   "opened_at": "2026-10-06T01:00:00Z",
+   "resolved_at": "2026-10-08T13:00:00Z",
+   "message": "median 1.0 input tokens per request on us-central1 llama-70b 2026-10-06",
+   "after_simulation_end": false
+  },
+  {
+   "check": "duplicates",
+   "key": "vm_lifecycle",
+   "severity": "warn",
+   "opened_at": "2026-10-06T13:00:00Z",
+   "resolved_at": "2026-10-07T13:00:00Z",
+   "message": "3.3% duplicate copies in vm_lifecycle over the last 24 h",
+   "after_simulation_end": false
+  },
+  {
+   "check": "inferred_session_end",
+   "key": "sessions",
+   "severity": "warn",
+   "opened_at": "2026-10-06T13:00:00Z",
+   "resolved_at": "2026-10-09T13:00:00Z",
+   "message": "1 sessions in the last 72 h ended without a stop event (billed to one heartbeat after the last)",
+   "after_simulation_end": false
+  },
+  {
+   "check": "token_plausibility",
+   "key": "us-central1/llama-70b/2026-10-07",
+   "severity": "error",
+   "opened_at": "2026-10-07T01:00:00Z",
+   "resolved_at": "2026-10-08T01:00:00Z",
+   "message": "median 1.5 input tokens per request on us-central1 llama-70b 2026-10-07",
+   "after_simulation_end": false
+  },
+  {
+   "check": "token_plausibility",
+   "key": "us-central1/qwen-235b/2026-10-07",
+   "severity": "error",
+   "opened_at": "2026-10-07T01:00:00Z",
+   "resolved_at": "2026-10-08T13:00:00Z",
+   "message": "median 1.3 input tokens per request on us-central1 qwen-235b 2026-10-07",
+   "after_simulation_end": false
+  },
+  {
+   "check": "duplicates",
+   "key": "vm_lifecycle",
+   "severity": "warn",
+   "opened_at": "2026-10-10T01:00:00Z",
+   "resolved_at": "2026-10-11T01:00:00Z",
+   "message": "3.0% duplicate copies in vm_lifecycle over the last 24 h",
+   "after_simulation_end": false
+  },
+  {
+   "check": "inferred_session_end",
+   "key": "sessions",
+   "severity": "warn",
+   "opened_at": "2026-10-13T01:00:00Z",
+   "resolved_at": null,
+   "message": "1 sessions in the last 72 h ended without a stop event (billed to one heartbeat after the last)",
+   "after_simulation_end": false
+  },
+  {
+   "check": "duplicates",
+   "key": "vm_lifecycle",
+   "severity": "warn",
+   "opened_at": "2026-10-16T01:00:00Z",
+   "resolved_at": "2026-10-17T01:00:00Z",
+   "message": "4.3% duplicate copies in vm_lifecycle over the last 24 h",
+   "after_simulation_end": true
+  },
+  {
+   "check": "freshness",
+   "key": "inference_usage/eu-north1",
+   "severity": "error",
+   "opened_at": "2026-10-16T13:00:00Z",
+   "resolved_at": null,
+   "message": "no inference_usage from eu-north1 for 13.0 h",
+   "after_simulation_end": true
+  },
+  {
+   "check": "freshness",
+   "key": "inference_usage/eu-west1",
+   "severity": "error",
+   "opened_at": "2026-10-16T13:00:00Z",
+   "resolved_at": null,
+   "message": "no inference_usage from eu-west1 for 13.0 h",
+   "after_simulation_end": true
+  },
+  {
+   "check": "freshness",
+   "key": "inference_usage/us-central1",
+   "severity": "error",
+   "opened_at": "2026-10-16T13:00:00Z",
+   "resolved_at": null,
+   "message": "no inference_usage from us-central1 for 13.0 h",
+   "after_simulation_end": true
+  },
+  {
+   "check": "freshness",
+   "key": "storage_snapshot/eu-north1",
+   "severity": "error",
+   "opened_at": "2026-10-16T13:00:00Z",
+   "resolved_at": null,
+   "message": "no storage_snapshot from eu-north1 for 14.0 h",
+   "after_simulation_end": true
+  },
+  {
+   "check": "freshness",
+   "key": "storage_snapshot/eu-west1",
+   "severity": "error",
+   "opened_at": "2026-10-16T13:00:00Z",
+   "resolved_at": null,
+   "message": "no storage_snapshot from eu-west1 for 14.0 h",
+   "after_simulation_end": true
+  },
+  {
+   "check": "freshness",
+   "key": "storage_snapshot/us-central1",
+   "severity": "error",
+   "opened_at": "2026-10-16T13:00:00Z",
+   "resolved_at": null,
+   "message": "no storage_snapshot from us-central1 for 14.0 h",
+   "after_simulation_end": true
+  }
+ ],
+ "timeline": [
+  {
+   "at": "2026-09-01T01:00:00Z",
+   "files": 2,
+   "rows": 208,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 0.58
+  },
+  {
+   "at": "2026-09-01T13:00:00Z",
+   "files": 40,
+   "rows": 3102,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 0.69
+  },
+  {
+   "at": "2026-09-02T01:00:00Z",
+   "files": 37,
+   "rows": 3414,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 0.73
+  },
+  {
+   "at": "2026-09-02T13:00:00Z",
+   "files": 39,
+   "rows": 3625,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 0.68
+  },
+  {
+   "at": "2026-09-03T01:00:00Z",
+   "files": 42,
+   "rows": 4163,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [
+    "duplicates:vm_lifecycle"
+   ],
+   "seconds": 0.8
+  },
+  {
+   "at": "2026-09-03T13:00:00Z",
+   "files": 41,
+   "rows": 4193,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [
+    "clock_skew:hosts"
+   ],
+   "seconds": 1.05
+  },
+  {
+   "at": "2026-09-04T01:00:00Z",
+   "files": 40,
+   "rows": 4246,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 0.89
+  },
+  {
+   "at": "2026-09-04T13:00:00Z",
+   "files": 39,
+   "rows": 4391,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.06
+  },
+  {
+   "at": "2026-09-05T01:00:00Z",
+   "files": 39,
+   "rows": 4294,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 0.98
+  },
+  {
+   "at": "2026-09-05T13:00:00Z",
+   "files": 41,
+   "rows": 4226,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [
+    "inferred_session_end:sessions"
+   ],
+   "seconds": 1.26
+  },
+  {
+   "at": "2026-09-06T01:00:00Z",
+   "files": 39,
+   "rows": 4072,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 0.99
+  },
+  {
+   "at": "2026-09-06T13:00:00Z",
+   "files": 39,
+   "rows": 4305,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.09
+  },
+  {
+   "at": "2026-09-07T01:00:00Z",
+   "files": 41,
+   "rows": 4369,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.05
+  },
+  {
+   "at": "2026-09-07T13:00:00Z",
+   "files": 40,
+   "rows": 4163,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.23
+  },
+  {
+   "at": "2026-09-08T01:00:00Z",
+   "files": 39,
+   "rows": 4091,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.13
+  },
+  {
+   "at": "2026-09-08T13:00:00Z",
+   "files": 42,
+   "rows": 4236,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.32
+  },
+  {
+   "at": "2026-09-09T01:00:00Z",
+   "files": 38,
+   "rows": 4152,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.11
+  },
+  {
+   "at": "2026-09-09T13:00:00Z",
+   "files": 37,
+   "rows": 4170,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.21
+  },
+  {
+   "at": "2026-09-10T01:00:00Z",
+   "files": 40,
+   "rows": 3772,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.14
+  },
+  {
+   "at": "2026-09-10T13:00:00Z",
+   "files": 40,
+   "rows": 3560,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.34
+  },
+  {
+   "at": "2026-09-11T01:00:00Z",
+   "files": 41,
+   "rows": 3483,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.11
+  },
+  {
+   "at": "2026-09-11T13:00:00Z",
+   "files": 40,
+   "rows": 3511,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.32
+  },
+  {
+   "at": "2026-09-12T01:00:00Z",
+   "files": 37,
+   "rows": 3411,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.17
+  },
+  {
+   "at": "2026-09-12T13:00:00Z",
+   "files": 39,
+   "rows": 3440,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.31
+  },
+  {
+   "at": "2026-09-13T01:00:00Z",
+   "files": 36,
+   "rows": 3586,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.26
+  },
+  {
+   "at": "2026-09-13T13:00:00Z",
+   "files": 41,
+   "rows": 3668,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.3
+  },
+  {
+   "at": "2026-09-14T01:00:00Z",
+   "files": 40,
+   "rows": 3824,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [
+    "duplicates:vm_lifecycle",
+    "inferred_session_end:sessions"
+   ],
+   "seconds": 1.2
+  },
+  {
+   "at": "2026-09-14T13:00:00Z",
+   "files": 41,
+   "rows": 3787,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.47
+  },
+  {
+   "at": "2026-09-15T01:00:00Z",
+   "files": 40,
+   "rows": 4097,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.25
+  },
+  {
+   "at": "2026-09-15T13:00:00Z",
+   "files": 39,
+   "rows": 4057,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.35
+  },
+  {
+   "at": "2026-09-16T01:00:00Z",
+   "files": 37,
+   "rows": 4019,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.44
+  },
+  {
+   "at": "2026-09-16T13:00:00Z",
+   "files": 38,
+   "rows": 3960,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.55
+  },
+  {
+   "at": "2026-09-17T01:00:00Z",
+   "files": 38,
+   "rows": 4082,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.55
+  },
+  {
+   "at": "2026-09-17T13:00:00Z",
+   "files": 39,
+   "rows": 4045,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [
+    "duplicates:vm_lifecycle"
+   ],
+   "seconds": 1.68
+  },
+  {
+   "at": "2026-09-18T01:00:00Z",
+   "files": 40,
+   "rows": 3962,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.45
+  },
+  {
+   "at": "2026-09-18T13:00:00Z",
+   "files": 38,
+   "rows": 4064,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.72
+  },
+  {
+   "at": "2026-09-19T01:00:00Z",
+   "files": 40,
+   "rows": 4093,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.47
+  },
+  {
+   "at": "2026-09-19T13:00:00Z",
+   "files": 39,
+   "rows": 4059,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.68
+  },
+  {
+   "at": "2026-09-20T01:00:00Z",
+   "files": 38,
+   "rows": 3885,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.45
+  },
+  {
+   "at": "2026-09-20T13:00:00Z",
+   "files": 41,
+   "rows": 4110,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.53
+  },
+  {
+   "at": "2026-09-21T01:00:00Z",
+   "files": 38,
+   "rows": 4310,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.42
+  },
+  {
+   "at": "2026-09-21T13:00:00Z",
+   "files": 40,
+   "rows": 4357,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.62
+  },
+  {
+   "at": "2026-09-22T01:00:00Z",
+   "files": 39,
+   "rows": 4045,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [
+    "duplicates:vm_lifecycle"
+   ],
+   "seconds": 1.46
+  },
+  {
+   "at": "2026-09-22T13:00:00Z",
+   "files": 40,
+   "rows": 4181,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.57
+  },
+  {
+   "at": "2026-09-23T01:00:00Z",
+   "files": 40,
+   "rows": 4185,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.51
+  },
+  {
+   "at": "2026-09-23T13:00:00Z",
+   "files": 40,
+   "rows": 4187,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.58
+  },
+  {
+   "at": "2026-09-24T01:00:00Z",
+   "files": 45,
+   "rows": 4127,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.42
+  },
+  {
+   "at": "2026-09-24T13:00:00Z",
+   "files": 44,
+   "rows": 4068,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.66
+  },
+  {
+   "at": "2026-09-25T01:00:00Z",
+   "files": 42,
+   "rows": 4413,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.72
+  },
+  {
+   "at": "2026-09-25T13:00:00Z",
+   "files": 41,
+   "rows": 4657,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.9
+  },
+  {
+   "at": "2026-09-26T01:00:00Z",
+   "files": 37,
+   "rows": 4481,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.58
+  },
+  {
+   "at": "2026-09-26T13:00:00Z",
+   "files": 39,
+   "rows": 4284,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.86
+  },
+  {
+   "at": "2026-09-27T01:00:00Z",
+   "files": 38,
+   "rows": 4325,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.53
+  },
+  {
+   "at": "2026-09-27T13:00:00Z",
+   "files": 38,
+   "rows": 4344,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.9
+  },
+  {
+   "at": "2026-09-28T01:00:00Z",
+   "files": 40,
+   "rows": 4238,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.65
+  },
+  {
+   "at": "2026-09-28T13:00:00Z",
+   "files": 42,
+   "rows": 4293,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [
+    "inferred_session_end:sessions"
+   ],
+   "seconds": 1.86
+  },
+  {
+   "at": "2026-09-29T01:00:00Z",
+   "files": 41,
+   "rows": 4372,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.71
+  },
+  {
+   "at": "2026-09-29T13:00:00Z",
+   "files": 38,
+   "rows": 4332,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.93
+  },
+  {
+   "at": "2026-09-30T01:00:00Z",
+   "files": 37,
+   "rows": 4293,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.7
+  },
+  {
+   "at": "2026-09-30T13:00:00Z",
+   "files": 40,
+   "rows": 4016,
+   "quarantined": 0,
+   "months": [
+    "2026-09"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.92
+  },
+  {
+   "at": "2026-10-01T01:00:00Z",
+   "files": 41,
+   "rows": 3205,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [
+    "freshness:inference_usage/eu-north1",
+    "freshness:storage_snapshot/eu-north1"
+   ],
+   "seconds": 1.66
+  },
+  {
+   "at": "2026-10-01T13:00:00Z",
+   "files": 43,
+   "rows": 3400,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [
+    "duplicates:vm_lifecycle",
+    "heartbeat_coverage:sessions"
+   ],
+   "seconds": 2.02
+  },
+  {
+   "at": "2026-10-02T01:00:00Z",
+   "files": 40,
+   "rows": 4184,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.38
+  },
+  {
+   "at": "2026-10-02T13:00:00Z",
+   "files": 41,
+   "rows": 4224,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.71
+  },
+  {
+   "at": "2026-10-03T01:00:00Z",
+   "files": 41,
+   "rows": 4550,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [
+    "duplicates:vm_lifecycle",
+    "inferred_session_end:sessions"
+   ],
+   "seconds": 2.05
+  },
+  {
+   "at": "2026-10-03T12:00:00Z",
+   "files": 34,
+   "rows": 4363,
+   "quarantined": 0,
+   "months": [
+    "2026-10"
+   ],
+   "closed": [
+    "2026-09"
+   ],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 5.01
+  },
+  {
+   "at": "2026-10-03T13:00:00Z",
+   "files": 4,
+   "rows": 375,
+   "quarantined": 0,
+   "months": [
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.46
+  },
+  {
+   "at": "2026-10-04T01:00:00Z",
+   "files": 38,
+   "rows": 4646,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.1
+  },
+  {
+   "at": "2026-10-04T12:00:00Z",
+   "files": 39,
+   "rows": 6109,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 74.12,
+   "alerts_opened": [
+    "restatement:2026-09"
+   ],
+   "seconds": 2.66
+  },
+  {
+   "at": "2026-10-04T13:00:00Z",
+   "files": 4,
+   "rows": 409,
+   "quarantined": 0,
+   "months": [
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.44
+  },
+  {
+   "at": "2026-10-05T01:00:00Z",
+   "files": 41,
+   "rows": 4812,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.16
+  },
+  {
+   "at": "2026-10-05T13:00:00Z",
+   "files": 38,
+   "rows": 4661,
+   "quarantined": 0,
+   "months": [
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 1.84
+  },
+  {
+   "at": "2026-10-06T01:00:00Z",
+   "files": 40,
+   "rows": 4563,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [
+    "token_plausibility:us-central1/qwen-235b/2026-10-06",
+    "token_plausibility:us-central1/llama-70b/2026-10-06"
+   ],
+   "seconds": 2.6
+  },
+  {
+   "at": "2026-10-06T13:00:00Z",
+   "files": 43,
+   "rows": 4425,
+   "quarantined": 0,
+   "months": [
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [
+    "duplicates:vm_lifecycle",
+    "inferred_session_end:sessions"
+   ],
+   "seconds": 3.39
+  },
+  {
+   "at": "2026-10-07T01:00:00Z",
+   "files": 41,
+   "rows": 4507,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [
+    "token_plausibility:us-central1/llama-70b/2026-10-07",
+    "token_plausibility:us-central1/qwen-235b/2026-10-07"
+   ],
+   "seconds": 2.46
+  },
+  {
+   "at": "2026-10-07T13:00:00Z",
+   "files": 41,
+   "rows": 4312,
+   "quarantined": 0,
+   "months": [
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.2
+  },
+  {
+   "at": "2026-10-08T01:00:00Z",
+   "files": 42,
+   "rows": 3875,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.55
+  },
+  {
+   "at": "2026-10-08T13:00:00Z",
+   "files": 42,
+   "rows": 5257,
+   "quarantined": 0,
+   "months": [
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.34
+  },
+  {
+   "at": "2026-10-09T01:00:00Z",
+   "files": 41,
+   "rows": 4495,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.69
+  },
+  {
+   "at": "2026-10-09T13:00:00Z",
+   "files": 41,
+   "rows": 4739,
+   "quarantined": 0,
+   "months": [
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.38
+  },
+  {
+   "at": "2026-10-10T01:00:00Z",
+   "files": 41,
+   "rows": 4934,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [
+    "duplicates:vm_lifecycle"
+   ],
+   "seconds": 3.02
+  },
+  {
+   "at": "2026-10-10T13:00:00Z",
+   "files": 38,
+   "rows": 4822,
+   "quarantined": 0,
+   "months": [
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.16
+  },
+  {
+   "at": "2026-10-11T01:00:00Z",
+   "files": 41,
+   "rows": 4942,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.47
+  },
+  {
+   "at": "2026-10-11T13:00:00Z",
+   "files": 44,
+   "rows": 4560,
+   "quarantined": 0,
+   "months": [
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.26
+  },
+  {
+   "at": "2026-10-12T01:00:00Z",
+   "files": 42,
+   "rows": 4425,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.78
+  },
+  {
+   "at": "2026-10-12T13:00:00Z",
+   "files": 41,
+   "rows": 4305,
+   "quarantined": 0,
+   "months": [
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.11
+  },
+  {
+   "at": "2026-10-13T01:00:00Z",
+   "files": 41,
+   "rows": 4153,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [
+    "inferred_session_end:sessions"
+   ],
+   "seconds": 2.53
+  },
+  {
+   "at": "2026-10-13T13:00:00Z",
+   "files": 42,
+   "rows": 4537,
+   "quarantined": 0,
+   "months": [
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.01
+  },
+  {
+   "at": "2026-10-14T01:00:00Z",
+   "files": 43,
+   "rows": 4574,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.64
+  },
+  {
+   "at": "2026-10-14T13:00:00Z",
+   "files": 41,
+   "rows": 4533,
+   "quarantined": 0,
+   "months": [
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.46
+  },
+  {
+   "at": "2026-10-15T01:00:00Z",
+   "files": 39,
+   "rows": 4317,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.39
+  },
+  {
+   "at": "2026-10-15T13:00:00Z",
+   "files": 39,
+   "rows": 4068,
+   "quarantined": 0,
+   "months": [
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.09
+  },
+  {
+   "at": "2026-10-16T01:00:00Z",
+   "files": 40,
+   "rows": 3744,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [
+    "duplicates:vm_lifecycle"
+   ],
+   "seconds": 2.63
+  },
+  {
+   "at": "2026-10-16T13:00:00Z",
+   "files": 19,
+   "rows": 24,
+   "quarantined": 0,
+   "months": [
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [
+    "freshness:inference_usage/eu-north1",
+    "freshness:inference_usage/eu-west1",
+    "freshness:inference_usage/us-central1",
+    "freshness:storage_snapshot/eu-north1",
+    "freshness:storage_snapshot/eu-west1",
+    "freshness:storage_snapshot/us-central1"
+   ],
+   "seconds": 1.87
+  },
+  {
+   "at": "2026-10-17T01:00:00Z",
+   "files": 16,
+   "rows": 21,
+   "quarantined": 0,
+   "months": [
+    "2026-09",
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.61
+  },
+  {
+   "at": "2026-10-17T13:00:00Z",
+   "files": 6,
+   "rows": 7,
+   "quarantined": 0,
+   "months": [
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.09
+  },
+  {
+   "at": "2026-10-18T00:00:00Z",
+   "files": 4,
+   "rows": 4,
+   "quarantined": 0,
+   "months": [
+    "2026-10"
+   ],
+   "closed": [],
+   "restated_usd": 0,
+   "alerts_opened": [],
+   "seconds": 2.16
+  }
+ ],
+ "seconds": 193.3
+}
