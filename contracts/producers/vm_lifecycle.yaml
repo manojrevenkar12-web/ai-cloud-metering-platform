@@ -1,0 +1,25 @@
+# Contract between the compute control plane (producer) and the data platform (consumer).
+name: vm_lifecycle
+owner: compute-control-plane
+contact: "#compute-control-plane"
+description: One event per VM state change, emitted by the control plane on true (NTP) time.
+event_time: event_time
+dedup_key: [event_id]
+pii: []
+versions:
+  1: {}
+  2:
+    since: "2026-10-10"
+    renames: {accelerator: gpu_type, accelerator_count: gpu_count}
+fields:
+  event_id:       {type: string, required: true}
+  schema_version: {type: int, required: true}
+  vm_id:          {type: string, required: true}
+  customer_id:    {type: string, required: true, pattern: "^c[0-9]{3}$"}
+  project_id:     {type: string, required: true}
+  event_type:     {type: string, required: true, enum: [created, started, stopped, deleted]}
+  event_time:     {type: timestamp, required: true}
+  region:         {type: string, required: true, enum: [eu-north1, eu-west1, us-central1]}
+  gpu_type:       {type: string, required: true, enum: [h100, h200, b200]}
+  gpu_count:      {type: int, required: true, min: 1, max: 8}
+  host_id:        {type: string, required: true}

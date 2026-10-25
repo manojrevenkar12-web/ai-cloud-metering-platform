@@ -1,0 +1,33 @@
+# A simulated landing zone, the Dagster UI on :3000 and the daemon that runs the sensor and the
+# schedules against it.
+#   docker compose run --rm simulate
+#   docker compose up dagster daemon
+services:
+  simulate:
+    build: .
+    command: ["simulate", "--root", "/data/lake", "--customers", "36"]
+    volumes: [lake:/data/lake]
+    profiles: [setup]
+
+  dagster:
+    build: .
+    entrypoint: ["dagster-webserver", "-m", "acm.dagster_defs", "-h", "0.0.0.0", "-p", "3000"]
+    environment:
+      ACM_LAKE: /data/lake
+      ACM_NOW: "2026-10-04T12:00:00Z"     # the simulated world's clock; leave empty in production
+      DAGSTER_HOME: /opt/dagster
+    volumes: [lake:/data/lake, dagster:/opt/dagster]
+    ports: ["3000:3000"]
+
+  daemon:
+    build: .
+    entrypoint: ["dagster-daemon", "run", "-m", "acm.dagster_defs"]
+    environment:
+      ACM_LAKE: /data/lake
+      ACM_NOW: "2026-10-04T12:00:00Z"
+      DAGSTER_HOME: /opt/dagster
+    volumes: [lake:/data/lake, dagster:/opt/dagster]
+
+volumes:
+  lake: {}
+  dagster: {}

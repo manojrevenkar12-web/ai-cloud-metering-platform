@@ -1,0 +1,26 @@
+# Public list prices, effective-dated (UTC). A price applies from its `from` instant until the
+# next entry for the same SKU. Read by the rating models and by the simulator's ground truth.
+currency: USD
+
+gpu:  # USD per GPU-hour, billed per second, 60 s minimum per session
+  h100:
+    eu-north1:   [{from: "2026-01-01T00:00:00Z", price: 2.95}, {from: "2026-10-01T00:00:00Z", price: 2.65}]
+    eu-west1:    [{from: "2026-01-01T00:00:00Z", price: 3.10}, {from: "2026-10-01T00:00:00Z", price: 2.80}]
+    us-central1: [{from: "2026-01-01T00:00:00Z", price: 2.95}, {from: "2026-10-01T00:00:00Z", price: 2.65}]
+  h200:
+    eu-north1:   [{from: "2026-01-01T00:00:00Z", price: 3.50}, {from: "2026-10-15T00:00:00Z", price: 3.20}]
+    eu-west1:    [{from: "2026-01-01T00:00:00Z", price: 3.65}]
+    us-central1: [{from: "2026-01-01T00:00:00Z", price: 3.50}]
+  b200:  # launched 2026-09-20; usage before launch is a data error
+    eu-north1:   [{from: "2026-09-20T00:00:00Z", price: 5.50}]
+    us-central1: [{from: "2026-09-20T00:00:00Z", price: 5.50}]
+
+inference:  # USD per million tokens
+  llama-70b:   [{from: "2026-01-01T00:00:00Z", input: 0.13, output: 0.40}, {from: "2026-10-08T00:00:00Z", input: 0.10, output: 0.40}]
+  qwen-235b:   [{from: "2026-01-01T00:00:00Z", input: 0.20, output: 0.60}]
+  embed-small: [{from: "2026-01-01T00:00:00Z", input: 0.01, output: 0.00}]
+
+storage:  # USD per GB-month (730 hours), metered from hourly snapshots
+  object:      [{from: "2026-01-01T00:00:00Z", price: 0.0147}]
+
+hours_per_month: 730

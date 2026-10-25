@@ -1,0 +1,24 @@
+name: inference_usage
+owner: inference-gateway
+contact: "#inference-gateway"
+description: >
+  Token counts per customer, model and 10-minute window. The gateway corrects a window by
+  re-sending the same event_id with a higher revision; the highest revision wins.
+event_time: window_start
+dedup_key: [event_id]
+revision: revision
+pii: [api_key_owner]
+versions:
+  1: {}
+fields:
+  event_id:       {type: string, required: true}
+  revision:       {type: int, required: true, min: 1}
+  customer_id:    {type: string, required: true, pattern: "^c[0-9]{3}$"}
+  model:          {type: string, required: true, enum: [llama-70b, qwen-235b, embed-small]}
+  region:         {type: string, required: true, enum: [eu-north1, eu-west1, us-central1]}
+  window_start:   {type: timestamp, required: true}
+  window_seconds: {type: int, required: true, enum: [600]}
+  requests:       {type: int, required: true, min: 1}
+  input_tokens:   {type: int, required: true, min: 0}
+  output_tokens:  {type: int, required: true, min: 0}
+  api_key_owner:  {type: string, required: true}

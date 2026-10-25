@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-cloud-metering-platform"
+version = "0.1.0"
+description = "Usage metering, rating, period close and reconciliation for an AI cloud, with data contracts, quality checks and lineage."
+requires-python = ">=3.11"
+dependencies = [
+  "duckdb>=1.1",
+  "pyarrow>=16",
+  "pyyaml>=6",
+  "dagster>=1.9",
+  "sqlglot>=25",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-xdist>=3", "dagster-webserver>=1.9", "ruff>=0.6"]
+spark = ["pyspark>=4.0"]
+
+[project.scripts]
+acm = "acm.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: replays, drills, Dagster and Spark (minutes)"]
+filterwarnings = ["ignore::dagster.BetaWarning"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["B008", "E501", "B905"]   # long SQL lines; zip over equal-length rows

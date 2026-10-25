@@ -1,0 +1,20 @@
+name: gpu_heartbeat
+owner: node-agent
+contact: "#node-agent"
+description: >
+  Every 5 minutes from each running VM's node agent, stamped with the host clock (which can be
+  off). seq counts heartbeats from the VM's start; an agent that restarts re-sends its spool with
+  new event_ids, so (vm_id, seq) is the real identity.
+event_time: host_time
+dedup_key: [vm_id, seq]
+pii: []
+versions:
+  1: {}
+fields:
+  event_id:        {type: string, required: true}
+  vm_id:           {type: string, required: true}
+  host_id:         {type: string, required: true}
+  seq:             {type: int, required: true, min: 0}
+  host_time:       {type: timestamp, required: true}
+  gpu_util_pct:    {type: float, required: true, min: 0, max: 100}
+  gpu_mem_used_gb: {type: float, required: true, min: 0, max: 200}

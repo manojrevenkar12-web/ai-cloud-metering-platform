@@ -1,0 +1,23 @@
+# What finance can rely on. Changing a column's name or type, or removing one, is a breaking
+# change (acm contracts --check fails CI); adding a column is not.
+name: finance_revenue
+owner: data-platform
+consumers: [finance, revenue-operations]
+grain: [customer_id, month]
+freshness_hours: 6
+guarantees:
+  - A closed month's closed_total never changes. Late data appears as adjustments with a reason.
+  - total = closed_total + adjustments for closed months; total = preliminary for open months.
+  - Money in USD, rounded to cents per customer, month and component.
+columns:
+  customer_id:      {type: string, nullable: false}
+  month:            {type: string, nullable: false}
+  status:           {type: string, nullable: false, enum: [open, closed]}
+  gpu_on_demand:    {type: decimal, nullable: false}
+  commitment:       {type: decimal, nullable: false}
+  inference:        {type: decimal, nullable: false}
+  storage:          {type: decimal, nullable: false}
+  credits_applied:  {type: decimal, nullable: false}
+  closed_total:     {type: decimal, nullable: true}
+  adjustments:      {type: decimal, nullable: false}
+  total:            {type: decimal, nullable: false}

@@ -1,0 +1,52 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  fast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -e ".[dev]"
+      - run: ruff check src tests
+      - name: Contracts (and breaking changes against the base branch on pull requests)
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            acm contracts --check --against "origin/${{ github.base_ref }}"
+          else
+            acm contracts --check
+          fi
+      - run: pytest -q -m "not slow" -n auto
+
+  slow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - run: pip install -e ".[dev,spark]"
+      - name: Replay, drills, Dagster and Spark on small worlds
+        run: pytest -q -m slow -n 2 --durations=10
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t acm .
+      - run: docker run --rm acm contracts --check

@@ -1,0 +1,16 @@
+name: storage_snapshot
+owner: object-storage
+contact: "#object-storage"
+description: Bytes stored per bucket, hourly. A snapshot stands for the hour that follows it.
+event_time: snapshot_time
+dedup_key: [event_id]
+pii: []
+versions:
+  1: {}
+fields:
+  event_id:      {type: string, required: true}
+  bucket_id:     {type: string, required: true}
+  customer_id:   {type: string, required: true, pattern: "^c[0-9]{3}$"}
+  region:        {type: string, required: true, enum: [eu-north1, eu-west1, us-central1]}
+  snapshot_time: {type: timestamp, required: true}
+  bytes_stored:  {type: int, required: true, min: 0}

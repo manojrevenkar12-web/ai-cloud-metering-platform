@@ -1,0 +1,17 @@
+name: product_capacity
+owner: data-platform
+consumers: [product, capacity-planning]
+grain: [day, region, gpu_type]
+freshness_hours: 24
+guarantees:
+  - allocated_gpu_hours counts billed allocation; busy_gpu_hours weights it by reported utilisation.
+  - Days with heartbeat coverage under 80% are flagged, not hidden.
+columns:
+  day:                {type: date, nullable: false}
+  region:             {type: string, nullable: false}
+  gpu_type:           {type: string, nullable: false}
+  allocated_gpu_hours: {type: double, nullable: false}
+  busy_gpu_hours:     {type: double, nullable: false}
+  committed_gpu_hours: {type: double, nullable: false}
+  heartbeat_coverage: {type: double, nullable: false}
+  low_coverage:       {type: boolean, nullable: false}

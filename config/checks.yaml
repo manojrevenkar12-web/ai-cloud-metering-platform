@@ -1,0 +1,37 @@
+# Data-quality checks run after every pipeline run. Severity: error pages the on-call (an alert
+# opens and stays open until the check passes), warn notifies the owning team, info is recorded.
+freshness:            # a region that stops reporting is a collector problem until proven otherwise
+  severity: error
+  datasets: [inference_usage, storage_snapshot]   # continuous producers; heartbeats come and go with VMs
+  max_lag_hours: 2
+duplicates:
+  severity: warn
+  max_share: 0.03     # duplicate copies among events that became visible in the last 24 h
+quarantine:
+  severity: error
+  max_share: 0.001    # records failing their contract, last 24 h
+token_plausibility:   # unit bugs: tokens per request far outside what a model ever sees
+  severity: error
+  min_input_tokens_per_request: 50
+heartbeat_coverage:
+  severity: warn
+  min_coverage: 0.8   # heartbeats received / expected over a session
+clock_skew:
+  severity: warn
+  max_abs_skew_s: 60
+inferred_session_end:  # stop events that never came: the control plane team should know
+  severity: warn
+  window_hours: 72
+  max_sessions: 0
+unpriced_usage:
+  severity: error
+unknown_customers:
+  severity: error
+mart_contracts:       # what finance and product read must look like what contracts/marts promises
+  severity: error
+  marts: [finance_revenue, product_capacity]
+restatement:          # a closed month changed: finance must hear it from us, with the reason
+  severity: warn
+reconciliation:
+  severity: error
+  max_unexplained_usd: 1.00

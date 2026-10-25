@@ -1,0 +1,6 @@
+# Period close. A month is closed (its revenue frozen in the ledger, later changes become
+# adjustments) at this time in the following month. Finance can move it; code reads it from here.
+first_month: "2026-09"      # go-live: earlier months are not metered by this platform
+close:
+  day_of_month: 3
+  hour_utc: 12
