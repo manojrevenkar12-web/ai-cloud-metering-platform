@@ -17,7 +17,7 @@ import json
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
-from acm.pricing import ts
+from acm.pricing import iso, ts
 from acm.replay import run_replay
 
 
@@ -39,6 +39,24 @@ def _undeclared_rename(lake, world) -> None:
             p.write_bytes(gzip.compress(("\n".join(lines) + "\n").encode(), mtime=0))
 
 
+def _duplicate_storm(lake, world) -> None:
+    """From 8 Oct the inference gateway uploads every hourly file twice (a second copy of each
+    record with the same event_id, in the next hour's file)."""
+    since = ts("2026-10-08T00:00:00Z")
+    files = sorted((lake.landing / "inference_usage").glob("*/*.jsonl.gz"))
+    copies: dict[Path, bytes] = {}
+    for p in files:
+        if ts(f"{p.parent.name}T{p.name[:2]}:00:00Z") < since:
+            continue
+        nxt = ts(f"{p.parent.name}T{p.name[:2]}:00:00Z") + 3600
+        q = lake.landing / "inference_usage" / iso(nxt)[:10] / f"{iso(nxt)[11:13]}.jsonl.gz"
+        copies[q] = copies.get(q, b"") + gzip.decompress(p.read_bytes())
+    for q, extra in copies.items():
+        q.parent.mkdir(parents=True, exist_ok=True)
+        base = gzip.decompress(q.read_bytes()) if q.exists() else b""
+        q.write_bytes(gzip.compress(base + extra, mtime=0))
+
+
 @dataclass
 class Drill:
     name: str
@@ -52,8 +70,12 @@ class Drill:
 
 DRILLS = [
     Drill("clean", [], [], "no faults: nothing may page"),
-    Drill("duplicates", ["retries", "replays"], ["duplicates"],
-          "producers retry (same event_id) and node agents replay their spool (new event_id, same seq)"),
+    # At the simulated rates (1% retries, spool replays after restarts) duplicates are routine:
+    # they must be billed once, and must not page (the check fires above 3%, see the next drill).
+    Drill("duplicates", ["retries", "replays"], [],
+          "producers retry (1%, same event_id) and node agents replay their spool (new event_id, same seq)"),
+    Drill("duplicate_storm", ["retries", "replays"], ["duplicates"],
+          "a gateway bug delivers every inference_usage file twice from 8 Oct", mutate=_duplicate_storm),
     Drill("late", ["late"], [], "0.5% of events arrive 1 to 48 hours late (absorbed: recomputed, restated if closed)"),
     Drill("outage", ["outage"], ["freshness", "restatement"],
           "eu-north1 collector down 30 Sep 18:00 to 1 Oct 06:00, delivered 4 Oct, after September closed"),

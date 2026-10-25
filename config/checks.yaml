@@ -7,6 +7,7 @@ freshness:            # a region that stops reporting is a collector problem unt
 duplicates:
   severity: warn
   max_share: 0.03     # duplicate copies among events that became visible in the last 24 h
+  min_events: 500     # below this a day's share is noise (one retry of 30 lifecycle events is 3%)
 quarantine:
   severity: error
   max_share: 0.001    # records failing their contract, last 24 h

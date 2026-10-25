@@ -68,7 +68,8 @@ def run_checks(con: duckdb.DuckDBPyConnection, now: int, cfg: dict | None = None
         total, distinct = con.execute(f"""SELECT count(*), count(DISTINCT ({key})) FROM bronze_{ds}
                                           WHERE _visible_at > ? AND _visible_at <= ?""", [day, now]).fetchone()
         share = (total - distinct) / total if total else 0.0
-        out.append(Result("duplicates", ds, share <= c["max_share"], c["severity"], share,
+        # A share of a handful of events is noise: judge only a day with enough events.
+        out.append(Result("duplicates", ds, share <= c["max_share"] or total < c["min_events"], c["severity"], share,
                           f"{share:.1%} duplicate copies in {ds} over the last 24 h"))
 
     c = cfg["quarantine"]
