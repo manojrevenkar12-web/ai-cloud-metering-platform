@@ -78,4 +78,4 @@ A lost stop event cannot be recovered exactly: the session is billed to one hear
 
 ## Cost of a run
 
-A pipeline run took 1.8 s on average and 5.0 s at most (the whole replay: 193 s, including the simulator and the naive pipeline). Bronze ended with 180 Parquet files after compaction.
+A pipeline run took 1.8 s on average and 4.9 s at most (the whole replay: 195 s, including the simulator and the naive pipeline). Bronze ended with 180 Parquet files after compaction.
